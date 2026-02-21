@@ -110,7 +110,7 @@ export default function Hero({ revealed = false }){
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
           <div className="flex-shrink-0">
             <div className="avatar-ring">
-              <img src="/profile.svg" alt="profile" className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover" />
+              <img src="/picture.png" alt="profile" className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover" />
             </div>
           </div>
 
