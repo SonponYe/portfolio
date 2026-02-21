@@ -32,6 +32,27 @@ const projects = [
     link: 'https://www.figma.com/design/MHyWNFmcRCuaquKlXWJH1O/Untitled',
     tech: ['Figma','UI/UX'],
     icon: '/icons/figma.svg'
+  },
+  {
+    title: 'Sniris Website',
+    desc: 'Company website for a London-based building and construction business.',
+    link: 'https://www.sniris.com/',
+    tech: ['Web Development','Business Website'],
+    icon: '/icons/web.svg'
+  },
+  {
+    title: 'Capital Business Group',
+    desc: 'Website for a London-based auto mechanic firm.',
+    link: 'https://capital-business-group.vercel.app/',
+    tech: ['Web Development','Automotive'],
+    icon: '/icons/web.svg'
+  },
+  {
+    title: 'Quick Caterers',
+    desc: 'Website for a London-based catering company.',
+    link: 'https://benedictaentsie54.wixsite.com/quick-caterers',
+    tech: ['Web Development','Catering'],
+    icon: '/icons/web.svg'
   }
 ]
 
