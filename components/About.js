@@ -3,10 +3,7 @@ import SectionWrapper from './SectionWrapper'
 export default function About(){
   return (
     <SectionWrapper id="about">
-      <div className="grid md:grid-cols-2 gap-8 items-center">
-        <div className="flex items-center justify-center">
-          <img src="/profile.svg" alt="profile" className="w-72 h-72 rounded-lg object-cover shadow-soft" />
-        </div>
+      <div>
         <div>
           <h2 className="section-title text-2xl">About</h2>
           <p className="mt-4 text-[var(--text)]/90 leading-relaxed">Motivated Computer Science student specializing in software development, AI integration, and UI/UX design. Seeking an internship to apply technical skills in real-world projects and gain industry mentorship. Passionate about problem-solving, technology innovation, and collaborative work.</p>
