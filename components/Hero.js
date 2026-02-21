@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from 'react'
 export default function Hero({ revealed = false }){
   // Titles to show in the hero after intro overlay is dismissed
   // added extra playful roles per user request
-  const titles = ['software engineer', 'UI/UX designer', 'systems designer', 'game dev', 'anime watcher', 'product designer','full stack developer', '#ETTU']
-  // Append suffix applied only to the 'game dev' title
+  const titles = ['software engineer', 'UI/UX designer', 'systems designer', 'game developer', 'anime watcher', 'product designer','full stack developer', '#ETTU']
+  // Append suffix applied only to the 'game developer' title
   const appendSuffix = ' .... ish'
 
   const [display, setDisplay] = useState('')
@@ -35,7 +35,7 @@ export default function Hero({ revealed = false }){
         setDisplay(currentTitle.slice(0, charIndex.current))
         if(charIndex.current >= currentTitle.length){
           clearInterval(timer)
-          if(currentTitle === 'game dev') setMode('pauseBeforeAppend')
+          if(currentTitle === 'game developer') setMode('pauseBeforeAppend')
           else setMode('pause')
         }
       }, 60)
