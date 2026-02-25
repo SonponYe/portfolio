@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 export default function IntroSequence({ onComplete }){
   const phrase = 'vibing to the rhythm of life'
-  const [stage, setStage] = useState('typing') // typing | pause | deleting | button
+  const [stage, setStage] = useState('typing') // typing | pause | deleting
   const [display, setDisplay] = useState('')
   const [visible, setVisible] = useState(true)
   const indexRef = useRef(0)
@@ -34,14 +34,17 @@ export default function IntroSequence({ onComplete }){
         if(indexRef.current < 0){
           clearInterval(t2)
           setDisplay('')
-          setStage('button')
+          setVisible(false)
+          setTimeout(()=>{
+            onComplete && onComplete()
+          }, 650)
           return
         }
         setDisplay(phrase.slice(0, indexRef.current))
       }, 40)
       return ()=> clearInterval(t2)
     }
-  },[stage])
+  },[stage, onComplete])
 
   return (
     <AnimatePresence>
@@ -54,36 +57,10 @@ export default function IntroSequence({ onComplete }){
           className="fixed inset-0 bg-white z-50 flex items-center justify-center"
         >
           <div className="text-center">
-            {/* Typing stage */}
-            {stage !== 'button' && (
-              <div className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[var(--text)] glow-green">
-                <span>{display}</span>
-                <span className="ml-1">{stage !== 'button' ? <span className="animate-pulse">|</span> : null}</span>
-              </div>
-            )}
-
-            {/* Button stage */}
-            {stage === 'button' && (
-              <motion.div initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1, transition: { duration: 0.8, ease: 'easeInOut' } }}>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 1.08 }}
-                  onClick={async ()=>{
-                    // play fade-out then call onComplete
-                    setVisible(false)
-                    setTimeout(()=>{
-                      onComplete && onComplete()
-                    },650)
-                  }}
-                  aria-label="Reveal site"
-                  className="btn-press-hero rounded-full flex items-center justify-center text-white text-lg font-semibold shadow-lg relative"
-                >
-                  <div className="animate-pulse text-2xl md:text-3xl lg:text-4xl font-bold">
-                    press me
-                  </div>
-                </motion.button>
-              </motion.div>
-            )}
+            <div className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[var(--text)] glow-green">
+              <span>{display}</span>
+              <span className="ml-1"><span className="animate-pulse">|</span></span>
+            </div>
           </div>
         </motion.div>
       )}
