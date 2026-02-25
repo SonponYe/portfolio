@@ -13,14 +13,14 @@
 html,body,#__next{
   height:100%;
 }
-/* increase overall scale: increase root font-size so Tailwind rem-based sizes scale up */
-html{font-size:20px}
+html{font-size:16px}
 body{
   background:var(--bg);
   color:var(--text);
   font-family: 'Space Grotesk', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  overflow-x: hidden;
 }
 
 /* Consistent vertical spacing for sections */
@@ -88,17 +88,31 @@ body{
   max-width:1200px;
   margin-left:auto;
   margin-right:auto;
-  /* slightly larger side padding to match larger typography */
-  padding-left:40px;
-  padding-right:40px;
+  padding-left:16px;
+  padding-right:16px;
+}
+@media (min-width: 640px){
+  .container-wide{
+    padding-left:24px;
+    padding-right:24px;
+  }
+}
+@media (min-width: 1024px){
+  .container-wide{
+    padding-left:32px;
+    padding-right:32px;
+  }
 }
 
 /* make the main press button a bit larger and more tappable */
 .btn-press{
   padding:0.7rem 1.1rem;
-  font-size:1.05rem;
+  font-size:0.95rem;
   font-weight:600;
   border-radius:9999px;
+}
+@media (min-width: 768px){
+  .btn-press{ font-size:1rem }
 }
 
 /* avatar ring and hero decorations (use existing color vars only) */
@@ -117,6 +131,11 @@ body{
   pointer-events:none;
   background: radial-gradient(600px 300px at 10% 10%, rgba(0,127,95,0.04), transparent 10%), radial-gradient(500px 250px at 90% 20%, rgba(0,179,122,0.035), transparent 12%);
   mix-blend-mode: multiply;
+}
+@media (max-width: 767px){
+  .hero-decor{
+    height: 38vh;
+  }
 }
 
 /* Semi-transparent hero panel so hero content sits on a translucent background */
@@ -215,3 +234,14 @@ body{
 
 /* slightly larger gap for project badges */
 .project-card .mt-4 { margin-top: 0.9rem }
+
+@media (hover: none){
+  .nav-link:hover,
+  .nav-brand:hover,
+  .project-card:hover,
+  .btn-press:hover{
+    transform: none;
+    filter: none;
+    box-shadow: none;
+  }
+}

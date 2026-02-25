@@ -104,30 +104,30 @@ export default function Hero({ revealed = false }){
   },[mode, revealed])
 
   return (
-    <section className="section min-h-[75vh] flex items-center relative overflow-hidden animated-border hero-bg">
+    <section className="section min-h-[72vh] md:min-h-[75vh] flex items-center relative overflow-hidden animated-border hero-bg">
       <div className="hero-decor" aria-hidden="true" />
       <div className="container-wide">
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-20">
           <div className="flex-shrink-0">
             <div className="avatar-ring">
-              <img src="/picture.png" alt="profile" className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover" />
+              <img src="/picture.png" alt="profile" className="w-32 h-32 sm:w-36 sm:h-36 md:w-48 md:h-48 rounded-full object-cover" />
             </div>
           </div>
 
-          <div className="text-left flex-1">
+          <div className="text-center md:text-left flex-1 w-full">
             <Parallax speed={-8}>
               <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">Hi, I&apos;m <span className="text-[var(--accent)]">Sonpon</span> Ye-shua Chief</h1>
-                <p className="mt-3 text-lg md:text-xl text-[var(--text)]/90">Computer Science student — software development, AI integration & UI/UX</p>
-                <p className="mt-2 text-sm text-[var(--text)]/70">University of Ghana • BSc Computer Science (Expected 2027) </p>
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">Hi, I&apos;m <span className="text-[var(--accent)]">Sonpon</span> Ye-shua Chief</h1>
+                <p className="mt-3 text-base sm:text-lg md:text-xl text-[var(--text)]/90">Computer Science student — software development, AI integration & UI/UX</p>
+                <p className="mt-2 text-xs sm:text-sm text-[var(--text)]/70">University of Ghana • BSc Computer Science (Expected 2027) </p>
 
                 {/* typed role loop appears here after intro revealed */}
-                <div className="mt-4 text-lg text-[var(--text)]/85 h-7">
+                <div className="mt-4 text-base sm:text-lg text-[var(--text)]/85 h-7">
                   <span className="font-medium">{display}</span>
                   <span className="ml-1">{revealed && <span className="animate-pulse">|</span>}</span>
                 </div>
 
-                <div className="mt-6 flex flex-wrap gap-4">
+                <div className="mt-6 flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-3 sm:gap-4">
                   <a href="#projects" className="btn-press text-white inline-flex items-center gap-2">View Projects</a>
                   <a href="#about" className="inline-flex items-center gap-2 border border-[var(--text)] text-[var(--text)] px-4 py-2 rounded-full hover:scale-105 transition-transform">About Me</a>
                 </div>
