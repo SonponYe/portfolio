@@ -3,7 +3,7 @@ export default function Contact(){
   return (
     <SectionWrapper id="contact">
       <div className="text-center px-1">
-        <h2 className="section-title text-xl sm:text-2xl">Let’s build something together</h2>
+        <h2 className="section-title text-xl sm:text-2xl">Let’s vibe to the rhythm and build something together</h2>
         <p className="mt-4 text-sm sm:text-base text-[var(--text)]/80">Digital Address: <span className="font-medium">GA-579-4945</span></p>
         <p className="mt-2 text-sm sm:text-base text-[var(--text)]/80">Phone: <a href="tel:+233537460511" className="underline break-words">+233 537 460 511</a></p>
         <p className="mt-2 text-sm sm:text-base text-[var(--text)]/80">Email: <a href="mailto:sonponyeshua@gmail.com" className="underline break-all">sonponyeshua@gmail.com</a></p>
