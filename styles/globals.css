@@ -245,3 +245,39 @@ body{
     box-shadow: none;
   }
 }
+
+/* Skills conveyor belt */
+.skills-belt-wrap{
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.skills-belt-track{
+  display: flex;
+  width: max-content;
+  gap: 0.75rem;
+  animation: skillsBelt 24s linear infinite;
+  will-change: transform;
+}
+
+@media (min-width: 640px){
+  .skills-belt-track{ gap: 1rem }
+}
+
+.skills-belt-wrap:hover .skills-belt-track{
+  animation-play-state: paused;
+}
+
+@keyframes skillsBelt{
+  from{ transform: translateX(0) }
+  to{ transform: translateX(-50%) }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .skills-belt-track{
+    animation: none;
+    transform: translateX(0);
+  }
+}
