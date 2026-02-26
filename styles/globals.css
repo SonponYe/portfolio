@@ -257,13 +257,21 @@ body{
 .skills-belt-track{
   display: flex;
   width: max-content;
-  gap: 0.75rem;
-  animation: skillsBelt 24s linear infinite;
+  animation: skillsBelt 18s linear infinite;
   will-change: transform;
 }
 
+.skills-belt-segment{
+  display: flex;
+  gap: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 @media (min-width: 640px){
-  .skills-belt-track{ gap: 1rem }
+  .skills-belt-segment{
+    gap: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .skills-belt-wrap:hover .skills-belt-track{
