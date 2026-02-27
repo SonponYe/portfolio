@@ -257,7 +257,7 @@ body{
 .skills-belt-track{
   display: flex;
   width: max-content;
-  animation: skillsBelt 18s linear infinite;
+  animation: skillsBelt 20s linear infinite;
   will-change: transform;
 }
 
@@ -274,18 +274,7 @@ body{
   }
 }
 
-.skills-belt-wrap:hover .skills-belt-track{
-  animation-play-state: paused;
-}
-
 @keyframes skillsBelt{
   from{ transform: translateX(0) }
   to{ transform: translateX(-50%) }
-}
-
-@media (prefers-reduced-motion: reduce){
-  .skills-belt-track{
-    animation: none;
-    transform: translateX(0);
-  }
 }
