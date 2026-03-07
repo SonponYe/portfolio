@@ -22,7 +22,7 @@ export default function Hero({ revealed = false }){
       setDisplay('')
       return
     }
-    // start the loop when revealed becomes true
+  // this here starts the loop after intro is reached, and handles the typing/deleting logic with pauses in between
     if(mode === 'idle'){
       setMode('typing')
     }
