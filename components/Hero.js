@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 export default function Hero({ revealed = false }){
   // Titles to show in the hero after intro overlay is dismissed
   // added extra playful roles per user request
-  const titles = ['software engineer', 'UI/UX designer', 'systems designer', 'game developer', 'anime watcher', 'product designer','full stack developer', '#ETTU']
+  const titles = ['software engineer', 'UI/UX designer', 'systems designer', 'Prompt engineer','game developer', 'anime watcher', 'product designer','full stack developer', '#ETTU']
   // Append suffix applied only to the 'game developer' title
   const appendSuffix = ' .... ish'
 
