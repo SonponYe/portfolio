@@ -38,7 +38,8 @@ export const blogPosts = [
     body: [
       'A client once asked for a homepage "that feels like a spaceship, but calm." We found a way.',
       'Another wanted everything above the fold including a full FAQ. We negotiated peace and whitespace.',
-      'Lesson: translating vibes into specific design decisions is half the job.'
+      'Lesson: translating vibes into specific design decisions is half the job.',
+      'Well, I am lying but sounds true right?'
     ]
   }
 ]
