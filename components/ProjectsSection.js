@@ -1,88 +1,9 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import Link from 'next/link'
 import SectionWrapper from './SectionWrapper'
 import ProjectCard from './ProjectCard'
-
-const projectGroups = [
-  {
-    name: 'AI Products',
-    summary: 'AI-driven assistants and automation tools.',
-    projects: [
-      {
-        title: 'Levi – AI-Powered Restaurant Assistant',
-        desc: 'AI assistant to streamline restaurant operations: reminders, purchase logs, and analytics. Integrated ElevenLabs for human-like voice interactions.',
-        tech: ['LLM APIs','ElevenLabs','React','Supabase'],
-        icon: '/icons/ai.svg'
-      },
-      {
-        title: 'Aya – AI Powered Store',
-        desc: 'AI system assisting sellers with customer interactions and order facilitation.',
-        tech: ['LLM APIs','React'],
-        icon: '/icons/ai.svg'
-      }
-    ]
-  },
-  {
-    name: 'Apps & Systems',
-    summary: 'Mobile-first apps and operational systems.',
-    projects: [
-      {
-        title: 'UG Navigate',
-        desc: 'Campus shortest path finder using graph algorithms to compute optimal routes across campus.',
-        tech: ['Algorithms','React Native'],
-        icon: '/icons/mobile.svg'
-      },
-      {
-        title: 'Restaurant Management System',
-        desc: 'Full-stack solution built with React Native and Supabase featuring modern UI and automated reporting.',
-        tech: ['React Native','Supabase'],
-        icon: '/icons/web.svg'
-      }
-    ]
-  },
-  {
-    name: 'Web & Client Work',
-    summary: 'Business websites and production-ready client delivery.',
-    projects: [
-      {
-        title: 'Sniris Website',
-        desc: 'Company website for a London-based building and construction business.',
-        link: 'https://www.sniris.com/',
-        tech: ['Web Development','Business Website'],
-        icon: '/icons/web.svg'
-      },
-      {
-        title: 'Capital Business Group',
-        desc: 'Website for a London-based auto mechanic firm.',
-        link: 'https://capital-business-group.vercel.app/',
-        tech: ['Web Development','Automotive'],
-        icon: '/icons/web.svg'
-      },
-      {
-        title: 'Quick Caterers',
-        desc: 'Website for a London-based catering company.',
-        link: 'https://benedictaentsie54.wixsite.com/quick-caterers',
-        tech: ['Web Development','Catering'],
-        icon: '/icons/web.svg'
-      }
-    ]
-  },
-  {
-    name: 'Design',
-    summary: 'UI and product design explorations.',
-    projects: [
-      {
-        title: 'Figma Design — Restaurant App',
-        desc: 'High-fidelity UI design created in Figma showcasing modern, user-centred screens.',
-        link: 'https://www.figma.com/design/MHyWNFmcRCuaquKlXWJH1O/Untitled',
-        tech: ['Figma','UI/UX'],
-        icon: '/icons/figma.svg'
-      }
-    ]
-  }
-]
-
-const totalProjects = projectGroups.reduce((count, group) => count + group.projects.length, 0)
+import { projectGroups, totalProjects } from '../data/projectsData'
 
 export default function ProjectsSection(){
   const [openGroups, setOpenGroups] = useState(['AI Products'])
@@ -102,6 +23,12 @@ export default function ProjectsSection(){
         <span className="inline-flex items-center rounded-full px-3 py-1 text-xs sm:text-sm bg-[var(--text)]/8 text-[var(--text)]">
           {totalProjects} total
         </span>
+        <Link
+          href="/projects"
+          className="inline-flex items-center rounded-full px-3 py-1 text-xs sm:text-sm border border-[var(--accent)]/30 text-[var(--text)] hover:bg-[var(--accent)]/8 transition"
+        >
+          Open full projects page
+        </Link>
       </div>
 
       <div className="mt-6 sm:mt-8 space-y-8 sm:space-y-10">
