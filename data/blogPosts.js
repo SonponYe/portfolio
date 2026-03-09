@@ -41,6 +41,21 @@ export const blogPosts = [
       'Lesson: translating vibes into specific design decisions is half the job.',
       'Well, I am lying but sounds true right?'
     ]
+  },
+  {
+    slug: 'the_onee_that_got_away',
+    title: 'The One That Got Away',
+    publishedOn: '2026-03-05',
+    mood: 'Respectfully unhinged',
+    tags: ['girls', 'good times', 'lessons'],
+    excerpt:
+      'Real stories, no name drops. Just the kind of moments every builder eventually collects.',
+    body: [
+      'A client once asked for a homepage "that feels like a spaceship, but calm." We found a way.',
+      'Another wanted everything above the fold including a full FAQ. We negotiated peace and whitespace.',
+      'Lesson: translating vibes into specific design decisions is half the job.',
+      'Well, I am lying but sounds true right?'
+    ]
   }
 ]
 
