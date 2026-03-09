@@ -49,12 +49,14 @@ export const blogPosts = [
     mood: 'Respectfully unhinged',
     tags: ['girls', 'good times', 'lessons'],
     excerpt:
-      'Real stories, no name drops. Just the kind of moments every builder eventually collects.',
+      'An actual story of me thinking I had a chance.. spoiler... I didn\'t.',
     body: [
-      'A client once asked for a homepage "that feels like a spaceship, but calm." We found a way.',
-      'Another wanted everything above the fold including a full FAQ. We negotiated peace and whitespace.',
-      'Lesson: translating vibes into specific design decisions is half the job.',
-      'Well, I am lying but sounds true right?'
+      'I met her.. or rather we met as she was hurriedly going to class"',
+      'We talked for hours, shared laughs, and I was convinced we had a connection.',
+      'But then you know.. I move to the rhythm of life most of the time and',
+      'She had everything planned out from breaks to classes bro.. naaaa',
+      'I was just a blip in her schedule, and I was too slow to realize it.',
+      'Lesson: Don\'t care bro cause statitically speaking, she is probably out of your league anyway'  
     ]
   }
 ]
