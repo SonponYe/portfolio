@@ -43,7 +43,7 @@ export const blogPosts = [
     ]
   },
   {
-    slug: 'the_onee_that_got_away',
+    slug: 'the_one_that_got_away',
     title: 'The One That Got Away',
     publishedOn: '2026-03-05',
     mood: 'Respectfully unhinged',
@@ -56,7 +56,7 @@ export const blogPosts = [
       'But then you know.. I move to the rhythm of life most of the time and',
       'She had everything planned out from breaks to classes bro.. naaaa',
       'I was just a blip in her schedule, and I was too slow to realize it.',
-      'Lesson: Don\'t care bro cause statitically speaking, she is probably out of your league anyway'  
+      'Lesson: Don\'t care bro cause statistically speaking, she is probably out of your league anyway so just sit in your corner and watch anime or something.'  
     ]
   }
 ]
