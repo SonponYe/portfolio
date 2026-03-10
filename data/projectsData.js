@@ -123,7 +123,7 @@ export const projectGroups = [
         title: 'Quick Caterers',
         desc: 'Website for a London-based catering company.',
         link: 'https://benedictaentsie54.wixsite.com/quick-caterers',
-        tech: ['Web Development', 'Catering'],
+        tech: ['Web Development', 'Catering', 'Wix'],
         icon: '/icons/web.svg',
         details: {
           whatItIs:
@@ -155,7 +155,8 @@ export const projectGroups = [
           highlights: [
             'Clean visual hierarchy and modern component styling.',
             'Designed core screens around user-centered navigation patterns.',
-            'Acts as a reusable blueprint for future product builds.'
+            'Acts as a reusable blueprint for future product builds.',
+            'inspired to to this my Mackey Kumi and its been beautiful since'
           ],
           value:
             'Created a clear product direction before development and accelerated handoff readiness.'
