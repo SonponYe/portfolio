@@ -58,6 +58,21 @@ export const blogPosts = [
       'I was just a blip in her schedule, and I was too slow to realize it.',
       'Lesson: Don\'t care bro cause statistically speaking, she is probably out of your league anyway so just sit in your corner and watch anime or something.'  
     ]
+  },
+  {
+    slug: 'the Merrylow Gang',
+    title: 'The Merrylow Gang',
+    publishedOn: '2026-03-04',
+    mood: 'Goosebumps',
+    tags: ['portfolio', 'self-initiated', 'growth'],
+    excerpt:
+      'Although we literally actually didnn\'t have any thing in commin to begin with we found a way',
+    body: [
+      'I cannot say enough about how the help me grow',
+      'The best niggas I have come across in the Univeristy',
+      'Happy the King of Kings made me meet them cause eiii',
+      'I am not good at writing about experience so I will leave that to Solomon (Zigla)'
+    ]
   }
 ]
 

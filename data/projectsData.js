@@ -164,6 +164,8 @@ export const projectGroups = [
       }
     ]
   }
+
+  
 ]
 
 export const totalProjects = projectGroups.reduce(
