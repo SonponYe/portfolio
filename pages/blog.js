@@ -99,7 +99,7 @@ export default function BlogPage() {
                         aria-expanded={isOpen}
                         className="mt-4 inline-flex items-center rounded-full px-3 py-1 text-xs sm:text-sm border border-[var(--accent)]/30 text-[var(--text)] hover:bg-[var(--accent)]/8 transition"
                       >
-                        {isOpen ? 'Hide post' : 'Read more'}
+                        {isOpen ? 'Hide post' : 'endulge yourself'}
                       </button>
 
                       <AnimatePresence initial={false}>
