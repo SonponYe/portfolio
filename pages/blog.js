@@ -27,7 +27,7 @@ export default function BlogPage() {
         <title>Blog | Ye</title>
         <meta
           name="description"
-          content="A personal blog space for experiments, stories, and weird ideas."
+          content="Where I try to express the weirdness that is the combination of the of the odd experiences, thoughts, and feelings that make up my life. Expect a mix of tech musings, personal reflections, and random tangents."
         />
       </Head>
 
