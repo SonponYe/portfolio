@@ -1,7 +1,7 @@
 import SectionWrapper from './SectionWrapper'
 import SkillBadge from './SkillBadge'
 
-const skills = ['React','Next.js','Tailwind','Framer Motion','UI Design','Figma','Git','Node.js','Express','Python','SQL']
+const skills = ['React','Next.js','Tailwind','Framer Motion','UI Design','Figma','Git','Node.js','Express','Python','SQL', 'Supabase', 'AI Prompting']
 
 export default function SkillsSection(){
   return (
