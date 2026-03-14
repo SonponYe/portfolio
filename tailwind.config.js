@@ -14,7 +14,7 @@ module.exports = {
         sans: ['"Space Grotesk"', 'Inter', 'ui-sans-serif', 'system-ui'],
       },
       boxShadow: {
-        soft: '0 6px 18px rgba(0,0,0,0.06)'
+        soft: '0 6px 18px rgba(0, 0, 0, 0.33)'
       }
     },
   },
