@@ -41,7 +41,7 @@ export default function BlogPage() {
                 <div>
                   <h1 className="section-title text-2xl sm:text-3xl">Blog Lab</h1>
                   <p className="mt-2 text-sm sm:text-base text-[var(--text)]/80">
-                    Your corner for experiments, strange takes, and creative chaos.
+                    The space between eureka and rambling, where I try to express the weirdness that is the combination of the of the odd experiences, thoughts, and feelings that make up my life...  or something like that.
                   </p>
                 </div>
 
