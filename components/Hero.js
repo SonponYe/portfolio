@@ -118,7 +118,7 @@ export default function Hero({ revealed = false }){
             <Parallax speed={-8}>
               <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
                 <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">Hi, I&apos;m <span className="text-[var(--accent)]">Sonpon</span> Ye-shua Chief</h1>
-                <p className="mt-3 text-base sm:text-lg md:text-xl text-[var(--text)]/90">Computer Science student - End-To-End Code Alchemist</p>
+                <p className="mt-3 text-base sm:text-lg md:text-xl text-[var(--text)]/90">Computer Science student -  (end-To-end Code Alchemist)</p>
                 <p className="mt-2 text-xs sm:text-sm text-[var(--text)]/70">University of Ghana • BSc Computer Science (Expected 2027) </p>
 
                 {/* typed role loop appears here after intro revealed */}
