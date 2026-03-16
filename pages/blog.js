@@ -1,26 +1,10 @@
-import { useMemo, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { AnimatePresence, motion } from 'framer-motion'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { blogPosts, totalBlogPosts } from '../data/blogPosts'
 
 export default function BlogPage() {
-  const defaultOpen = useMemo(() => {
-    const firstSlug = blogPosts[0]?.slug
-    return firstSlug ? { [firstSlug]: true } : {}
-  }, [])
-
-  const [openPosts, setOpenPosts] = useState(defaultOpen)
-
-  const togglePost = (postSlug) => {
-    setOpenPosts((previous) => ({
-      ...previous,
-      [postSlug]: !previous[postSlug]
-    }))
-  }
-
   return (
     <>
       <Head>
@@ -58,18 +42,16 @@ export default function BlogPage() {
                 </div>
               </div>
 
-              <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                 {blogPosts.map((post) => {
-                  const isOpen = Boolean(openPosts[post.slug])
-
                   return (
                     <article
                       key={post.slug}
-                      className="rounded-xl border border-[var(--text)]/10 bg-white p-4 sm:p-5"
+                      className="rounded-xl border-2 border-[var(--text)]/18 bg-white p-4 sm:p-5 shadow-[0_10px_24px_rgba(0,0,0,0.04)]"
                     >
                       <div className="flex flex-wrap items-start justify-between gap-3">
                         <div>
-                          <h2 className="text-lg sm:text-xl font-semibold text-[var(--text)] leading-snug">
+                          <h2 className="text-lg sm:text-xl font-bold text-[var(--text)] leading-snug">
                             {post.title}
                           </h2>
                           <p className="mt-1 text-xs sm:text-sm text-[var(--text)]/70">
@@ -93,37 +75,12 @@ export default function BlogPage() {
                         ))}
                       </div>
 
-                      <button
-                        type="button"
-                        onClick={() => togglePost(post.slug)}
-                        aria-expanded={isOpen}
-                        className="mt-4 inline-flex items-center rounded-full px-3 py-1 text-xs sm:text-sm border border-[var(--accent)]/30 text-[var(--text)] hover:bg-[var(--accent)]/8 transition"
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="mt-4 inline-flex items-center rounded-full px-4 py-2 text-xs sm:text-sm bg-[var(--text)] text-white hover:opacity-90 transition font-semibold"
                       >
-                        {isOpen ? 'Hide post' : 'endulge yourself'}
-                      </button>
-
-                      <AnimatePresence initial={false}>
-                        {isOpen ? (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.25, ease: 'easeInOut' }}
-                            className="overflow-hidden"
-                          >
-                            <div className="mt-4 pt-4 border-t border-[var(--text)]/10 space-y-3">
-                              {post.body.map((paragraph) => (
-                                <p
-                                  key={paragraph}
-                                  className="text-sm text-[var(--text)]/85 leading-relaxed"
-                                >
-                                  {paragraph}
-                                </p>
-                              ))}
-                            </div>
-                          </motion.div>
-                        ) : null}
-                      </AnimatePresence>
+                        Open full post
+                      </Link>
                     </article>
                   )
                 })}

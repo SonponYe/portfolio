@@ -1,26 +1,10 @@
-import { useMemo, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { AnimatePresence, motion } from 'framer-motion'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { projectGroups, totalProjects } from '../data/projectsData'
 
 export default function ProjectsPage() {
-  const defaultOpen = useMemo(() => {
-    const firstTitle = projectGroups[0]?.projects[0]?.title
-    return firstTitle ? { [firstTitle]: true } : {}
-  }, [])
-
-  const [openProjects, setOpenProjects] = useState(defaultOpen)
-
-  const toggleProject = (projectTitle) => {
-    setOpenProjects((previous) => ({
-      ...previous,
-      [projectTitle]: !previous[projectTitle]
-    }))
-  }
-
   return (
     <>
       <Head>
@@ -62,25 +46,30 @@ export default function ProjectsPage() {
                 {projectGroups.map((group) => (
                   <section
                     key={group.name}
-                    className="rounded-xl border border-[var(--text)]/10 p-4 sm:p-5 lg:p-6 bg-white"
+                    className="rounded-2xl border-2 border-[var(--text)]/20 p-4 sm:p-5 lg:p-6 bg-white"
                   >
-                    <h2 className="text-lg sm:text-xl font-semibold text-[var(--text)]">
-                      {group.name}
-                    </h2>
-                    <p className="text-sm text-[var(--text)]/75 mt-1">{group.summary}</p>
+                    <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-[var(--text)]/15 pb-4">
+                      <h2 className="text-lg sm:text-xl font-bold text-[var(--text)] tracking-wide uppercase">
+                        {group.name}
+                      </h2>
+                      <span className="inline-flex items-center rounded-full px-3 py-1 text-xs sm:text-sm bg-[var(--accent)]/15 text-[var(--text)] font-semibold">
+                        {group.projects.length} project{group.projects.length > 1 ? 's' : ''}
+                      </span>
+                    </div>
+                    <p className="text-sm text-[var(--text)]/75 mt-3">{group.summary}</p>
 
-                    <div className="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+                    <div className="mt-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                       {group.projects.map((project) => {
-                        const isOpen = Boolean(openProjects[project.title])
+                        const projectSlug = project.slug || project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
 
                         return (
                           <article
                             key={project.title}
-                            className="rounded-lg border border-[var(--accent)]/15 bg-white p-4 sm:p-5"
+                            className="rounded-xl border-2 border-[var(--accent)]/20 bg-white p-4 sm:p-5 shadow-[0_10px_24px_rgba(0,0,0,0.04)]"
                           >
                             <div className="flex items-start justify-between gap-4">
                               <div>
-                                <h3 className="font-semibold text-base sm:text-lg text-[var(--text)] leading-snug">
+                                <h3 className="font-bold text-base sm:text-lg text-[var(--text)] leading-snug">
                                   {project.title}
                                 </h3>
                                 <p className="mt-2 text-sm text-[var(--text)]/80 leading-relaxed">
@@ -101,62 +90,32 @@ export default function ProjectsPage() {
                               {project.tech.map((techItem) => (
                                 <span
                                   key={techItem}
-                                  className="text-xs px-2 py-1 bg-[var(--text)]/6 text-[var(--text)] rounded"
+                                  className="text-xs px-2 py-1 bg-[var(--text)]/7 text-[var(--text)] rounded font-medium"
                                 >
                                   {techItem}
                                 </span>
                               ))}
                             </div>
 
-                            <div className="mt-4 flex flex-wrap items-center gap-3">
-                              <button
-                                type="button"
-                                onClick={() => toggleProject(project.title)}
-                                aria-expanded={isOpen}
-                                className="inline-flex items-center rounded-full px-3 py-1 text-xs sm:text-sm border border-[var(--accent)]/30 text-[var(--text)] hover:bg-[var(--accent)]/8 transition"
+                            <div className="mt-5 flex flex-wrap items-center gap-3">
+                              <Link
+                                href={`/projects/${projectSlug}`}
+                                className="inline-flex items-center rounded-full px-4 py-2 text-xs sm:text-sm bg-[var(--text)] text-white hover:opacity-90 transition font-semibold"
                               >
-                                {isOpen ? 'Hide details' : 'Expand details'}
-                              </button>
+                                Open full project
+                              </Link>
 
                               {project.link ? (
                                 <a
                                   href={project.link}
                                   target="_blank"
                                   rel="noreferrer"
-                                  className="inline-flex items-center rounded-full px-3 py-1 text-xs sm:text-sm bg-[var(--accent)]/14 text-[var(--text)] hover:bg-[var(--accent)]/22 transition"
+                                  className="inline-flex items-center rounded-full px-3 py-2 text-xs sm:text-sm border border-[var(--accent)]/40 text-[var(--text)] hover:bg-[var(--accent)]/8 transition"
                                 >
-                                  Visit project
+                                  External link
                                 </a>
                               ) : null}
                             </div>
-
-                            <AnimatePresence initial={false}>
-                              {isOpen && project.details ? (
-                                <motion.div
-                                  initial={{ opacity: 0, height: 0 }}
-                                  animate={{ opacity: 1, height: 'auto' }}
-                                  exit={{ opacity: 0, height: 0 }}
-                                  transition={{ duration: 0.25, ease: 'easeInOut' }}
-                                  className="overflow-hidden"
-                                >
-                                  <div className="mt-4 pt-4 border-t border-[var(--text)]/10">
-                                    <p className="text-sm text-[var(--text)]/85 leading-relaxed">
-                                      {project.details.whatItIs}
-                                    </p>
-
-                                    <ul className="mt-3 space-y-2 text-sm text-[var(--text)]/80 list-disc pl-5">
-                                      {project.details.highlights.map((highlight) => (
-                                        <li key={highlight}>{highlight}</li>
-                                      ))}
-                                    </ul>
-
-                                    <p className="mt-3 text-sm text-[var(--text)]/90">
-                                      <span className="font-semibold">Impact:</span> {project.details.value}
-                                    </p>
-                                  </div>
-                                </motion.div>
-                              ) : null}
-                            </AnimatePresence>
                           </article>
                         )
                       })}
