@@ -29,6 +29,7 @@ export const projectGroups = [
           whatItIs:
             'Aya is an AI store assistant that supports sellers with customer communication and helps guide buyers from inquiry to order.',
           highlights: [
+            'Built my Merrylow, inspired by Mackey Kumi Jr.',
             'Generates quick, context-aware replies for common customer questions.',
             'Supports smoother order flow by reducing back-and-forth between buyer and seller.',
             'Built for small businesses that need support but cannot run full support teams.'
@@ -44,7 +45,7 @@ export const projectGroups = [
     summary: 'Mobile-first apps and operational systems.',
     projects: [
       {
-        title: 'UG Navigate',
+        title: 'UG Navigate - Unfinished',
         desc: 'Campus shortest path finder using graph algorithms to compute optimal routes across campus.',
         tech: ['Algorithms', 'React Native'],
         icon: '/icons/mobile.svg',
@@ -61,7 +62,7 @@ export const projectGroups = [
         }
       },
       {
-        title: 'Restaurant Management System',
+        title: 'Restaurant Management System - (Micjean Royal Restaurant App',
         desc: 'Full-stack solution built with React Native and Supabase featuring modern UI and automated reporting.',
         tech: ['React Native', 'Supabase'],
         icon: '/icons/web.svg',
@@ -69,6 +70,7 @@ export const projectGroups = [
           whatItIs:
             'A full-stack restaurant operations platform for managing records, reporting, and day-to-day workflows.',
           highlights: [
+            'Built by Team 5ive9ine',
             'Cross-platform React Native frontend for on-the-go management.',
             'Supabase backend for data storage, auth, and streamlined integrations.',
             'Automated reporting to reduce manual end-of-day and periodic summaries.'
