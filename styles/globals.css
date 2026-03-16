@@ -26,9 +26,14 @@ body{
 /* Consistent vertical spacing for sections */
 .section{
   padding-block: 3.5rem; /* top + bottom spacing */
+  border-top: 3px solid rgba(0,127,95,0.16);
 }
 @media (min-width: 768px){
   .section{ padding-block: 4.5rem }
+}
+
+.section-divider{
+  border-top: 3px solid rgba(0,127,95,0.16);
 }
 
 /* subtle glowing red button */
