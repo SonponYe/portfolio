@@ -62,7 +62,7 @@ export const projectGroups = [
         }
       },
       {
-        title: 'Restaurant Management System - (Micjean Royal Restaurant App',
+        title: 'Restaurant Management System - (Micjean Royal Restaurant App)',
         desc: 'Full-stack solution built with React Native and Supabase featuring modern UI and automated reporting.',
         tech: ['React Native', 'Supabase'],
         icon: '/icons/web.svg',
@@ -162,6 +162,26 @@ export const projectGroups = [
           ],
           value:
             'Created a clear product direction before development and accelerated handoff readiness.'
+        }
+      },
+      {
+        title: 'MindMesh Prototype',
+        desc: 'All-in-one student learning web app design by Preworks, combining AI chatbots, quiz generation, flashcards, and analytics.',
+        link: 'https://www.figma.com/design/NNIBfNyQbEuJL2J12PVZxa/mindmesh-prototype-MVp?node-id=0-1&p=f',
+        tech: ['Figma', 'UI/UX', 'EdTech'],
+        icon: '/icons/figma.svg',
+        details: {
+          whatItIs:
+            'MindMesh is an all-in-one student learning web app being developed by Preworks to centralize AI-assisted study tools in a single platform.',
+          highlights: [
+            'Includes chatbot support for student learning and quick academic guidance.',
+            'Generates AI-powered quizzes from student learning materials.',
+            'Creates flashcards from uploaded student content for revision.',
+            'Provides analytics to help students track learning progress and outcomes.',
+            'Planned addition: lecturer-uploaded papers, articles, and research content.'
+          ],
+          value:
+            'Brings study, revision, and progress tracking into one focused learning experience for students.'
         }
       }
     ]
