@@ -130,7 +130,7 @@ export default function ProjectDetailPage({ project }) {
                     <h2 className="text-base sm:text-lg font-bold uppercase tracking-wide text-[var(--text)]">
                       Impact
                     </h2>
-                    <p className="mt-2 text-sm sm:text-base text-[var(--text)]/9০ leading-relaxed">
+                    <p className="mt-2 text-sm sm:text-base text-[var(--text)]/90 leading-relaxed">
                       {project.details.value}
                     </p>
                   </section>
