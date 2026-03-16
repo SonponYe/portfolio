@@ -4,6 +4,7 @@ export const projectGroups = [
     summary: 'AI-driven assistants and automation tools.',
     projects: [
       {
+        slug: 'levi-ai-powered-restaurant-assistant',
         title: 'Levi - AI-Powered Restaurant Assistant',
         desc: 'AI assistant to streamline restaurant operations: reminders, purchase logs, and analytics. Integrated ElevenLabs for human-like voice interactions.',
         tech: ['LLM APIs', 'ElevenLabs', 'React', 'Supabase'],
@@ -21,6 +22,7 @@ export const projectGroups = [
         }
       },
       {
+        slug: 'aya-ai-powered-store',
         title: 'Aya - AI Powered Store',
         desc: 'AI system assisting sellers with customer interactions and order facilitation.',
         tech: ['LLM APIs', 'React'],
@@ -45,6 +47,7 @@ export const projectGroups = [
     summary: 'Mobile-first apps and operational systems.',
     projects: [
       {
+        slug: 'ug-navigate-unfinished',
         title: 'UG Navigate - Unfinished',
         desc: 'Campus shortest path finder using graph algorithms to compute optimal routes across campus.',
         tech: ['Algorithms', 'React Native'],
@@ -62,6 +65,7 @@ export const projectGroups = [
         }
       },
       {
+        slug: 'restaurant-management-system-micjean-royal-restaurant-app',
         title: 'Restaurant Management System - (Micjean Royal Restaurant App)',
         desc: 'Full-stack solution built with React Native and Supabase featuring modern UI and automated reporting.',
         tech: ['React Native', 'Supabase'],
@@ -86,6 +90,7 @@ export const projectGroups = [
     summary: 'Business websites and production-ready client delivery.',
     projects: [
       {
+        slug: 'sniris-website',
         title: 'Sniris Website',
         desc: 'Company website for a London-based building and construction business.',
         link: 'https://www.sniris.com/',
@@ -104,6 +109,7 @@ export const projectGroups = [
         }
       },
       {
+        slug: 'capital-business-group',
         title: 'Capital Business Group',
         desc: 'Website for a London-based auto mechanic firm.',
         link: 'https://capital-business-group.vercel.app/',
@@ -122,6 +128,7 @@ export const projectGroups = [
         }
       },
       {
+        slug: 'quick-caterers',
         title: 'Quick Caterers',
         desc: 'Website for a London-based catering company.',
         link: 'https://benedictaentsie54.wixsite.com/quick-caterers',
@@ -146,6 +153,7 @@ export const projectGroups = [
     summary: 'UI and product design explorations.',
     projects: [
       {
+        slug: 'figma-design-restaurant-app',
         title: 'Figma Design - Restaurant App',
         desc: 'High-fidelity UI design created in Figma showcasing modern, user-centred screens.',
         link: 'https://www.figma.com/design/MHyWNFmcRCuaquKlXWJH1O/Untitled',
@@ -165,6 +173,7 @@ export const projectGroups = [
         }
       },
       {
+        slug: 'mindmesh-prototype',
         title: 'MindMesh Prototype',
         desc: 'All-in-one student learning web app design by Preworks, combining AI chatbots, quiz generation, flashcards, and analytics.',
         link: 'https://www.figma.com/design/NNIBfNyQbEuJL2J12PVZxa/mindmesh-prototype-MVp?node-id=0-1&p=f',
