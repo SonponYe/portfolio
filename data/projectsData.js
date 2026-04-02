@@ -132,7 +132,7 @@ export const projectGroups = [
         title: 'Quick Caterers',
         desc: 'Website for a London-based catering company.',
         link: 'https://benedictaentsie54.wixsite.com/quick-caterers',
-        tech: ['Web Development', 'Catering', 'Wix'],
+        tech: ['Web Development', 'Catering', 'Wix','website builder'],
         icon: '/icons/web.svg',
         details: {
           whatItIs:
@@ -173,7 +173,7 @@ export const projectGroups = [
         }
       },
       {
-        slug: 'mindmesh-prototype',
+        slug: 'mindmesh-prototype - UI',
         title: 'MindMesh Prototype',
         desc: 'All-in-one student learning web app design by Preworks, combining AI chatbots, quiz generation, flashcards, and analytics.',
         link: 'https://www.figma.com/design/NNIBfNyQbEuJL2J12PVZxa/mindmesh-prototype-MVp?node-id=0-1&p=f',
