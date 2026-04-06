@@ -51,12 +51,32 @@ export const blogPosts = [
     excerpt:
       'An actual story of me thinking I had a chance.. spoiler... I didn\'t.',
     body: [
-      'I met her.. or rather we met as she was hurriedly going to class"',
-      'We talked for hours, shared laughs, and I was convinced we had a connection.',
-      'But then you know.. I move to the rhythm of life most of the time and',
-      'She had everything planned out from breaks to classes bro.. naaaa',
-      'I was just a blip in her schedule, and I was too slow to realize it.',
-      'Lesson: Don\'t care bro cause statistically speaking, she is probably out of your league anyway so just sit in your corner and watch anime or something.'  
+      'I am terrible with names, so I usually give people nicknames based on movie or anime characters I know.',
+      'But with her, it felt different.',
+      'She walked fast, always in a hurry, always moving like she had somewhere important to be.',
+      'At first, it felt odd, like she never wanted to stay around people too long.',
+      'Still, no stress.',
+      'We went home together a couple of times, and talking to her was easy.',
+      'Like, really easy.',
+      'She understood my nonsense humor, and she had her own kind of odd humor too.',
+      'Good odd.',
+      'I loved that about her.',
+      'She was focused, though. Very focused.',
+      'The kind of focused where calls stopped getting picked, and simple texts got replies hours, even days later.',
+      'And me, I move with life\'s rhythm, so I do not like forcing myself into people\'s space.',
+      'If I am not worth your time, chale, anime is always there.',
+      'I actually liked her.',
+      'Nothing magical or dramatic, just real.',
+      'I cared about her opinions, and I do not care about most people\'s opinions like that.',
+      'For the most part, I blame myself, so I cannot even complain much.',
+      'Sometimes I go back through our chats and see how bad I sounded, like I did not care.',
+      'She would ask me something deep like, "What do you fear?" and instead of giving a thoughtful answer, I turned it into a joke.',
+      'I did that so many times without even realizing it.',
+      'And now, there is nothing I can do about it.',
+      'The "what ifs" are the part that hurts.',
+      'We still have a good relationship, but compared to what we had, it feels like a dying ember.',
+      'But as I always say: ETTU.',
+      'And her name is... check out my ROT app to decode it.'
     ]
   },
   {
