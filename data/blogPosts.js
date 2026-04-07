@@ -98,3 +98,8 @@ export const blogPosts = [
 ]
 
 export const totalBlogPosts = blogPosts.length
+
+
+//I have to step up my game with these blogs men cause eiiiii.... they aer soooo horrible
+// Horribly structured as well too... 
+//REMEMBER CHANGE WHEN YOU AVACATE ON 26TH oooo
