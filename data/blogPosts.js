@@ -94,6 +94,18 @@ export const blogPosts = [
       'Happy the King of Kings made me meet them cause eiii',
       'I am not good at writing about experience so I will leave that to Solomon (Zigla)'
     ]
+  },
+  {
+    slug: 'SOON TO COME',
+    title: 'SOON TO COME',
+    publishedOn: '2026-03-04',
+    mood: 'SOON TO COME',
+    tags: ['SOON TO COME'],
+    excerpt:
+      'SOON TO COME',
+    body: [
+      'Soon To Come'
+    ]
   }
 ]
 
