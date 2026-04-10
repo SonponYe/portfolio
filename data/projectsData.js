@@ -140,7 +140,8 @@ export const projectGroups = [
           highlights: [
             'Showcases catering services in a simple, accessible format.',
             'Supports social proof and event-readiness messaging.',
-            'Structured to encourage direct booking and inquiries.'
+            'Structured to encourage direct booking and inquiries.',
+            'Built using Wix for quick deployment and easy client updates.'
           ],
           value:
             'Helped the business present itself professionally online and improve discoverability for potential clients.'
