@@ -121,7 +121,8 @@ export const projectGroups = [
           highlights: [
             'Service-focused content structure for faster user understanding.',
             'Clear contact pathways to encourage inquiry submissions.',
-            'Optimized for practical use on both desktop and mobile.'
+            'Optimized for practical use on both desktop and mobile.',
+            'Built with scalability in mind to allow for future content and service expansion.'
           ],
           value:
             'Enabled the client to communicate services online more effectively and improve lead capture opportunities.'
