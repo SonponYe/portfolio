@@ -102,7 +102,9 @@ export const projectGroups = [
           highlights: [
             'Professional service pages that communicate offerings clearly.',
             'Simple client journey from discovery to contact.',
-            'Production-ready deployment for real business usage.'
+            'Production-ready deployment for real business usage.',
+            'Built with scalability in mind to allow for future content and service expansion.',
+            'Designed to establish a trustworthy online presence for a service-based business.'
           ],
           value:
             'Strengthened digital presence and helped present services with a polished, trustworthy brand image.'
