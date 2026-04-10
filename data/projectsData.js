@@ -166,7 +166,8 @@ export const projectGroups = [
             'Clean visual hierarchy and modern component styling.',
             'Designed core screens around user-centered navigation patterns.',
             'Acts as a reusable blueprint for future product builds.',
-            'inspired to start UI/UX designing my Mackey Kumi and its been beautiful since'
+            'inspired to start UI/UX designing my Mackey Kumi and its been beautiful since',
+            'Created with handoff readiness in mind to accelerate development when needed.'
           ],
           value:
             'Created a clear product direction before development and accelerated handoff readiness.'
