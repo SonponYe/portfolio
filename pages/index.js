@@ -12,7 +12,7 @@ export default function Home(){
   const [revealed, setRevealed] = useState(false)
 
   return (
-    <div className="min-h-screen relative homepage-retro">
+    <div className="min-h-screen relative">
       <IntroSequence onComplete={() => setRevealed(true)} />
       <main className={`transition-opacity duration-700 ${revealed ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         <Navbar />

@@ -33,7 +33,7 @@ export default function ProjectsSection(){
 
       <div className="mt-6 sm:mt-8 space-y-8 sm:space-y-10">
         {projectGroups.map(group => (
-          <section key={group.name} className="rounded-xl border border-[var(--text)]/10 p-4 sm:p-5 lg:p-6 bg-white/80 retro-panel">
+          <section key={group.name} className="rounded-xl border border-[var(--text)]/10 p-4 sm:p-5 lg:p-6 bg-white/80">
             <button
               type="button"
               onClick={() => toggleGroup(group.name)}

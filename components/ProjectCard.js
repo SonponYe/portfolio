@@ -10,7 +10,7 @@ export default function ProjectCard({ project, index }){
     <CardContainer
       {...linkProps}
       whileHover={{ y:-6 }}
-      className="block project-card p-3 sm:p-4 rounded-lg border shadow-sm"
+      className="block project-card p-3 sm:p-4 rounded-lg border bg-white shadow-sm"
     >
       {/* image area */}
       {project.icon ? (
