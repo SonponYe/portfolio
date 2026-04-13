@@ -104,7 +104,7 @@ export default function Hero({ revealed = false }){
   },[mode, revealed])
 
   return (
-    <section className="section min-h-[72vh] md:min-h-[75vh] flex items-center relative overflow-hidden animated-border hero-bg">
+    <section className="section min-h-[72vh] md:min-h-[75vh] flex items-center relative overflow-hidden animated-border hero-bg retro-panel hero-panel">
       <div className="hero-decor" aria-hidden="true" />
       <div className="container-wide">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-20">
@@ -117,12 +117,12 @@ export default function Hero({ revealed = false }){
           <div className="text-center md:text-left flex-1 w-full">
             <Parallax speed={-8}>
               <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">Hi, I&apos;m <span className="text-[var(--accent)]">Sonpon</span> Ye-shua Chief</h1>
-                <p className="mt-3 text-base sm:text-lg md:text-xl text-[var(--text)]/90">Computer Science student -  (end-To-end Code Alchemist)</p>
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight retro-heading">Hi, I&apos;m <span className="text-[var(--accent)]">Sonpon</span> Ye-shua Chief</h1>
+                <p className="mt-3 text-base sm:text-lg md:text-xl text-[var(--text)]/90 retro-subline">Computer Science student -  (end-To-end Code Alchemist)</p>
                 <p className="mt-2 text-xs sm:text-sm text-[var(--text)]/70">University of Ghana • BSc Computer Science (Expected 2027) </p>
 
                 {/* typed role loop appears here after intro revealed */}
-                <div className="mt-4 text-base sm:text-lg text-[var(--text)]/85 h-7">
+                <div className="mt-4 text-base sm:text-lg text-[var(--text)]/85 h-7 retro-typing">
                   <span className="font-medium">{display}</span>
                   <span className="ml-1">{revealed && <span className="animate-pulse">|</span>}</span>
                 </div>
