@@ -54,7 +54,7 @@ export default function IntroSequence({ onComplete }){
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.4 } }}
-          className="fixed inset-0 bg-white z-50 flex items-center justify-center"
+          className="fixed inset-0 bg-white z-50 flex items-center justify-center intro-json"
         >
           <div className="text-center">
             <div className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[var(--text)] glow-green">
