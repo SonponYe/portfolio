@@ -3,7 +3,7 @@ export default function Contact(){
   const businessCard = {
     name: 'Sonpon Ye-shua Chief',
     role: 'Full stack developer',
-    tag: 'End-to-End code alchemist',
+    tag: 'End-to-End Code alchemist',
     phone: '+233537460511',
     email: 'sonponyeshua@gmail.com',
     github: 'https://github.com/SonponYe-shuaChief',
