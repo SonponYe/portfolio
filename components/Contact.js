@@ -37,12 +37,44 @@ export default function Contact(){
       image.src = src
     })
 
+  const drawImageCover = (ctx, img, dx, dy, dWidth, dHeight) => {
+    const sourceRatio = img.width / img.height
+    const destRatio = dWidth / dHeight
+
+    let sx = 0
+    let sy = 0
+    let sWidth = img.width
+    let sHeight = img.height
+
+    if (sourceRatio > destRatio) {
+      sWidth = img.height * destRatio
+      sx = (img.width - sWidth) / 2
+    } else {
+      sHeight = img.width / destRatio
+      sy = (img.height - sHeight) / 2
+    }
+
+    ctx.drawImage(img, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+  }
+
+  const truncateTextToWidth = (ctx, text, maxWidth) => {
+    if (ctx.measureText(text).width <= maxWidth) return text
+
+    const ellipsis = '...'
+    let value = text
+    while (value.length > 0 && ctx.measureText(value + ellipsis).width > maxWidth) {
+      value = value.slice(0, -1)
+    }
+
+    return value + ellipsis
+  }
+
   const handleDownloadPng = async () => {
     try {
-      const width = 1080
-      const height = 1350
-      const cardX = 72
-      const cardY = 72
+      const width = 1400
+      const height = 980
+      const cardX = 70
+      const cardY = 70
       const cardW = width - cardX * 2
       const cardH = height - cardY * 2
 
@@ -83,14 +115,14 @@ export default function Contact(){
       ctx.font = '600 34px "IBM Plex Mono", monospace'
       ctx.fillText('business-card.json', cardX + 34, cardY + 58)
 
-      const photoSize = 164
+      const photoSize = 180
       const photoX = cardX + 38
       const photoY = cardY + 124
       const photo = await loadImage('/picture.png')
       drawRoundedRect(ctx, photoX, photoY, photoSize, photoSize, 20)
       ctx.save()
       ctx.clip()
-      ctx.drawImage(photo, photoX, photoY, photoSize, photoSize)
+      drawImageCover(ctx, photo, photoX, photoY, photoSize, photoSize)
       ctx.restore()
       ctx.lineWidth = 2
       ctx.strokeStyle = 'rgba(22, 108, 76, 0.2)'
@@ -99,10 +131,12 @@ export default function Contact(){
 
       const objectX = photoX + photoSize + 42
       let lineY = photoY + 8
-      const lineHeight = 56
+      const lineHeight = 44
       const endY = cardY + cardH - 66
+      const objectRightPadding = 48
+      const objectMaxX = cardX + cardW - objectRightPadding
 
-      ctx.font = '500 30px "IBM Plex Mono", monospace'
+      ctx.font = '500 28px "IBM Plex Mono", monospace'
       ctx.fillStyle = '#2f8e69'
       ctx.fillText('{', objectX, lineY)
       lineY += lineHeight
@@ -110,20 +144,25 @@ export default function Contact(){
       lines.forEach(([key, value], index) => {
         if(lineY > endY) return
         const suffix = index < lines.length - 1 ? ',' : ''
+        const keyText = `  "${key}"`
+        const valuePrefix = '"'
+        const valueSuffix = `"${suffix}`
+
         ctx.fillStyle = '#137553'
-        ctx.fillText(`  "${key}"`, objectX, lineY)
-        const keyWidth = ctx.measureText(`  "${key}"`).width
+        ctx.fillText(keyText, objectX, lineY)
+        const keyWidth = ctx.measureText(keyText).width
 
         ctx.fillStyle = '#2f8e69'
         ctx.fillText(': ', objectX + keyWidth, lineY)
         const puncWidth = ctx.measureText(': ').width
 
-        ctx.fillStyle = '#776617'
-        ctx.fillText(`"${value}"`, objectX + keyWidth + puncWidth, lineY)
-        const valueWidth = ctx.measureText(`"${value}"`).width
+        const valueStartX = objectX + keyWidth + puncWidth
+        const valueMaxWidth = Math.max(40, objectMaxX - valueStartX)
+        const rawValueText = `${valuePrefix}${value}${valueSuffix}`
+        const safeValueText = truncateTextToWidth(ctx, rawValueText, valueMaxWidth)
 
-        ctx.fillStyle = '#2f8e69'
-        ctx.fillText(suffix, objectX + keyWidth + puncWidth + valueWidth, lineY)
+        ctx.fillStyle = '#776617'
+        ctx.fillText(safeValueText, valueStartX, lineY)
 
         lineY += lineHeight
       })
