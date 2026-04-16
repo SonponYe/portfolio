@@ -14,25 +14,13 @@ export default function Navbar(){
           Ye<span className="text-sm text-muted">...</span>
         </Link>
         <nav className="flex flex-wrap gap-x-4 gap-y-2 sm:gap-x-6 text-sm sm:text-base text-[var(--text)]/90">
-          {isHomeRoute ? (
-            <span className="nav-link" aria-current="page">Home</span>
-          ) : (
-            <Link href="/" className="nav-link">Home</Link>
-          )}
+          <Link href="/" className="nav-link" aria-current={isHomeRoute ? 'page' : undefined}>Home</Link>
 
           <Link href="/#about" className="nav-link">About</Link>
 
-          {isProjectsRoute ? (
-            <span className="nav-link" aria-current="page">Projects</span>
-          ) : (
-            <Link href="/projects" className="nav-link">Projects</Link>
-          )}
+          <Link href="/projects" className="nav-link" aria-current={isProjectsRoute ? 'page' : undefined}>Projects</Link>
 
-          {isBlogRoute ? (
-            <span className="nav-link" aria-current="page">Blog</span>
-          ) : (
-            <Link href="/blog" className="nav-link">Blog</Link>
-          )}
+          <Link href="/blog" className="nav-link" aria-current={isBlogRoute ? 'page' : undefined}>Blog</Link>
 
           <Link href="/#skills" className="nav-link">Skills</Link>
           <Link href="/#contact" className="nav-link">Contact</Link>
