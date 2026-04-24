@@ -1,10 +1,19 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import TypingEffect from '../components/TypingEffect'
 import { blogPosts, totalBlogPosts } from '../data/blogPosts'
 
 export default function BlogPage() {
+  const [showTitleTyping, setShowTitleTyping] = useState(false)
+  const [showDescTyping, setShowDescTyping] = useState(false)
+
+  useEffect(() => {
+    setShowTitleTyping(Math.random() > 0.4)
+    setShowDescTyping(Math.random() > 0.4)
+  }, [])
   return (
     <>
       <Head>
@@ -23,9 +32,19 @@ export default function BlogPage() {
             <div className="container-wide">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <h1 className="section-title text-2xl sm:text-3xl">Blog Lab</h1>
+                  <h1 className="section-title text-2xl sm:text-3xl">
+                    {showTitleTyping ? <TypingEffect text="Blog Lab" speed={60} loop={false} /> : 'Blog Lab'}
+                  </h1>
                   <p className="mt-2 text-sm sm:text-base text-[var(--text)]/80">
-                    The space between eureka and rambling, where I try to express the weirdness that is the combination of the of the odd experiences, thoughts, and feelings that make up my life...  or something like that.
+                    {showDescTyping ? (
+                      <TypingEffect 
+                        text="The space between eureka and rambling, where I try to express the weirdness that is the combination of the of the odd experiences, thoughts, and feelings that make up my life...  or something like that."
+                        speed={15}
+                        loop={false}
+                      />
+                    ) : (
+                      'The space between eureka and rambling, where I try to express the weirdness that is the combination of the of the odd experiences, thoughts, and feelings that make up my life...  or something like that.'
+                    )}
                   </p>
                 </div>
 

@@ -1,10 +1,17 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import TypingEffect from '../../components/TypingEffect'
 import { blogPosts } from '../../data/blogPosts'
 
 export default function BlogPostPage({ post }) {
+  const [showTitleTyping, setShowTitleTyping] = useState(false)
+
+  useEffect(() => {
+    setShowTitleTyping(Math.random() > 0.4)
+  }, [post?.slug])
   if (!post) {
     return (
       <>
@@ -58,7 +65,7 @@ export default function BlogPostPage({ post }) {
             <article className="rounded-2xl border-2 border-[var(--text)]/20 bg-white p-5 sm:p-7 lg:p-9 shadow-[0_16px_36px_rgba(0,0,0,0.06)]">
               <header className="border-b-2 border-[var(--text)]/15 pb-5">
                 <h1 className="text-2xl sm:text-3xl font-bold text-[var(--text)] leading-tight">
-                  {post.title}
+                  {showTitleTyping ? <TypingEffect text={post.title} speed={35} loop={false} /> : post.title}
                 </h1>
                 <p className="mt-3 text-sm sm:text-base text-[var(--text)]/80">
                   {post.publishedOn} • {post.mood}

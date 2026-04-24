@@ -1,10 +1,19 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import TypingEffect from '../components/TypingEffect'
 import { projectGroups, totalProjects } from '../data/projectsData'
 
 export default function ProjectsPage() {
+  const [showTitleTyping, setShowTitleTyping] = useState(false)
+  const [showDescTyping, setShowDescTyping] = useState(false)
+
+  useEffect(() => {
+    setShowTitleTyping(Math.random() > 0.4)
+    setShowDescTyping(Math.random() > 0.4)
+  }, [])
   return (
     <>
       <Head>
@@ -23,9 +32,19 @@ export default function ProjectsPage() {
             <div className="container-wide">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <h1 className="section-title text-2xl sm:text-3xl">All Projects</h1>
+                  <h1 className="section-title text-2xl sm:text-3xl">
+                    {showTitleTyping ? <TypingEffect text="All Projects" speed={70} loop={false} /> : 'All Projects'}
+                  </h1>
                   <p className="mt-2 text-sm sm:text-base text-[var(--text)]/80">
-                    Expanded project breakdowns, goals, and outcomes.
+                    {showDescTyping ? (
+                      <TypingEffect 
+                        text="Expanded project breakdowns, goals, and outcomes."
+                        speed={30}
+                        loop={false}
+                      />
+                    ) : (
+                      'Expanded project breakdowns, goals, and outcomes.'
+                    )}
                   </p>
                 </div>
 

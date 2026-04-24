@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import TypingEffect from '../../components/TypingEffect'
 import { projectGroups } from '../../data/projectsData'
 
 const slugify = (value = '') =>
@@ -20,6 +22,11 @@ const allProjects = projectGroups.flatMap((group) =>
 )
 
 export default function ProjectDetailPage({ project }) {
+  const [showTitleTyping, setShowTitleTyping] = useState(false)
+
+  useEffect(() => {
+    setShowTitleTyping(Math.random() > 0.4)
+  }, [project?.slug])
   if (!project) {
     return (
       <>
@@ -77,7 +84,7 @@ export default function ProjectDetailPage({ project }) {
               <div className="flex items-start justify-between gap-4 border-b-2 border-[var(--text)]/15 pb-5">
                 <div>
                   <h1 className="text-2xl sm:text-3xl font-bold text-[var(--text)] leading-tight">
-                    {project.title}
+                    {showTitleTyping ? <TypingEffect text={project.title} speed={40} loop={false} /> : project.title}
                   </h1>
                   <p className="mt-3 text-sm sm:text-base text-[var(--text)]/85 max-w-3xl leading-relaxed">
                     {project.desc}
