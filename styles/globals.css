@@ -9,11 +9,11 @@
 }
 
 html, body, #__next, main, section, div {
-  background: #0a0e27 !important;
+  background: #000000 !important;
 }
 
 :root{
-  --bg: #0a0e27;
+  --bg: #000000;
   --text: #00ff00;
   /* accent changed to bright neon green for matrix vibe */
   --accent: #00ff41;
@@ -21,63 +21,84 @@ html, body, #__next, main, section, div {
 
 html,body,#__next{
   height:100%;
-  background: #0a0e27 !important;
+  background: #000000 !important;
 }
 html{font-size:16px}
 body{
-  background: #0a0e27 !important;
+  background: #000000 !important;
   color:var(--text);
   font-family: 'IBM Plex Mono', monospace;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   overflow-x: hidden;
-  text-shadow: 0 0 10px rgba(0, 255, 0, 0.3), 0 0 20px rgba(0, 255, 0, 0.1);
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.4), 0 0 16px rgba(0, 255, 0, 0.15);
+  position: relative;
+}
+
+/* CRT scan line effect overlay */
+body::before{
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  z-index: 9999;
 }
 
 /* Matrix style scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0e27;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #00ff41;
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #00ff99;
-  box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
 }
 
 /* Consistent vertical spacing for sections */
 .section{
-  padding-block: 3.5rem; /* top + bottom spacing */
-  border-top: 2px solid rgba(0, 255, 65, 0.3);
-  box-shadow: inset 0 2px 10px rgba(0, 255, 65, 0.05);
+  padding-block: 3rem;
+  border-top: none;
+  box-shadow: none;
 }
 @media (min-width: 768px){
-  .section{ padding-block: 4.5rem }
+  .section{ padding-block: 4rem }
 }
 
 .section-divider{
-  border-top: 2px solid rgba(0, 255, 65, 0.3);
-  box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+  border-top: 1px solid rgba(0, 255, 65, 0.15);
+  box-shadow: none;
 }
 
 /* Matrix glowing button */
 .btn-press{
   background:var(--accent);
-  box-shadow: 0 0 15px rgba(0, 255, 65, 0.5), 0 0 30px rgba(0, 255, 65, 0.2) inset, 0 6px 18px rgba(0, 255, 65, 0.3);
-  border: 1px solid rgba(0, 255, 65, 0.6);
-  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.6), 0 0 24px rgba(0, 255, 65, 0.2);
+  border: 1px solid rgba(0, 255, 65, 0.7);
+  transition: all 0.2s ease;
 }
 
 .btn-press:hover {
-  box-shadow: 0 0 25px rgba(0, 255, 65, 0.8), 0 0 40px rgba(0, 255, 65, 0.4) inset;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.9), 0 0 40px rgba(0, 255, 65, 0.4);
   text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
 }
 
@@ -117,23 +138,23 @@ body{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  width:11rem; /* base size (kept same as w-44) */
+  width:11rem;
   height:11rem;
   border-radius:9999px;
   background: linear-gradient(180deg, rgba(0,255,65,1), rgba(0,200,50,1));
-  color: #0a0e27;
+  color: #000000;
   font-weight: 700;
-  transform: scale(3); /* visually ~3x bigger */
+  transform: scale(3);
   transform-origin:center;
-  box-shadow: 0 0 40px rgba(0, 255, 65, 0.8), 0 0 80px rgba(0, 255, 65, 0.4), 0 8px 30px rgba(0,255,65,0.3) inset;
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.8), 0 0 60px rgba(0, 255, 65, 0.4);
   transition: transform 200ms ease, filter 160ms ease, box-shadow 200ms ease;
   -webkit-tap-highlight-color: transparent;
   border: 2px solid rgba(0, 255, 65, 0.8);
 }
 .btn-press-hero:hover{ 
-  filter:brightness(1.1); 
-  transform: scale(3.05);
-  box-shadow: 0 0 60px rgba(0, 255, 65, 1), 0 0 100px rgba(0, 255, 65, 0.6), 0 8px 30px rgba(0,255,65,0.5) inset;
+  filter:brightness(1.15); 
+  transform: scale(3.08);
+  box-shadow: 0 0 50px rgba(0, 255, 65, 1), 0 0 80px rgba(0, 255, 65, 0.6);
 }
 .btn-press-hero:active{ transform: scale(2.95) }
 .btn-press-hero::after{
@@ -145,7 +166,7 @@ body{
   width: 84%;
   height: 40%;
   border-radius: 9999px 9999px 60% 60% / 60% 60% 40% 40%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.05));
+  background: linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,0.02));
   pointer-events: none;
   mix-blend-mode: overlay;
 }
