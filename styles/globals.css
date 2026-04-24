@@ -4,10 +4,10 @@
 @tailwind utilities;
 
 :root{
-  --bg: #ffffff;
-  --text: #007f5f;
-  /* accent changed to green-only palette per request */
-  --accent: #00b37a;
+  --bg: #0a0e27;
+  --text: #00ff00;
+  /* accent changed to bright neon green for matrix vibe */
+  --accent: #00ff41;
 }
 
 html,body,#__next{
@@ -17,32 +17,91 @@ html{font-size:16px}
 body{
   background:var(--bg);
   color:var(--text);
-  font-family: 'Space Grotesk', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: 'IBM Plex Mono', monospace;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   overflow-x: hidden;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.3), 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+/* Matrix style scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0e27;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff41;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff99;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
 }
 
 /* Consistent vertical spacing for sections */
 .section{
   padding-block: 3.5rem; /* top + bottom spacing */
-  border-top: 3px solid rgba(0,127,95,0.16);
+  border-top: 2px solid rgba(0, 255, 65, 0.3);
+  box-shadow: inset 0 2px 10px rgba(0, 255, 65, 0.05);
 }
 @media (min-width: 768px){
   .section{ padding-block: 4.5rem }
 }
 
 .section-divider{
-  border-top: 3px solid rgba(0,127,95,0.16);
+  border-top: 2px solid rgba(0, 255, 65, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
 }
 
-/* subtle glowing red button */
+/* Matrix glowing button */
 .btn-press{
   background:var(--accent);
-  box-shadow:0 6px 18px rgba(0,179,122,0.14), 0 0 30px rgba(0,179,122,0.06) inset;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.5), 0 0 30px rgba(0, 255, 65, 0.2) inset, 0 6px 18px rgba(0, 255, 65, 0.3);
+  border: 1px solid rgba(0, 255, 65, 0.6);
+  transition: all 0.3s ease;
 }
 
-/* large glossy press button used in Intro overlay */
+.btn-press:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 65, 0.8), 0 0 40px rgba(0, 255, 65, 0.4) inset;
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+}
+
+/* Typing effect styling */
+.typing-effect {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--text);
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.6), 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+.typing-effect .cursor {
+  animation: blink 1s infinite;
+  margin-left: 2px;
+  color: var(--accent);
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Matrix rain animation background */
+@keyframes matrix-fall {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* large glossy press button used in Intro overlay - Matrix style */
 .btn-press-hero{
   position:relative;
   display:inline-flex;
@@ -51,15 +110,21 @@ body{
   width:11rem; /* base size (kept same as w-44) */
   height:11rem;
   border-radius:9999px;
-  background: linear-gradient(180deg, rgba(118,255,206,1), rgba(0,179,122,1));
-  color: white;
+  background: linear-gradient(180deg, rgba(0,255,65,1), rgba(0,200,50,1));
+  color: #0a0e27;
+  font-weight: 700;
   transform: scale(3); /* visually ~3x bigger */
   transform-origin:center;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.35), 0 8px 30px rgba(0,179,122,0.16) inset;
-  transition: transform 200ms ease, filter 160ms ease;
+  box-shadow: 0 0 40px rgba(0, 255, 65, 0.8), 0 0 80px rgba(0, 255, 65, 0.4), 0 8px 30px rgba(0,255,65,0.3) inset;
+  transition: transform 200ms ease, filter 160ms ease, box-shadow 200ms ease;
   -webkit-tap-highlight-color: transparent;
+  border: 2px solid rgba(0, 255, 65, 0.8);
 }
-.btn-press-hero:hover{ filter:brightness(1.03); transform: scale(3.05) }
+.btn-press-hero:hover{ 
+  filter:brightness(1.1); 
+  transform: scale(3.05);
+  box-shadow: 0 0 60px rgba(0, 255, 65, 1), 0 0 100px rgba(0, 255, 65, 0.6), 0 8px 30px rgba(0,255,65,0.5) inset;
+}
 .btn-press-hero:active{ transform: scale(2.95) }
 .btn-press-hero::after{
   /* glossy highlight */
@@ -70,17 +135,17 @@ body{
   width: 84%;
   height: 40%;
   border-radius: 9999px 9999px 60% 60% / 60% 60% 40% 40%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.12));
+  background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.05));
   pointer-events: none;
   mix-blend-mode: overlay;
 }
 
 .btn-press:hover{
-  filter:brightness(.95);
+  filter: brightness(1.1);
 }
 
 .glow-green{
-  text-shadow: 0 4px 20px rgba(0,127,95,0.06);
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.4), 0 0 20px rgba(0, 255, 65, 0.2);
 }
 
 .section-title{

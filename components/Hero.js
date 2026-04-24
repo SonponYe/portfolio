@@ -1,8 +1,18 @@
 import { motion } from 'framer-motion'
 import { Parallax } from 'react-scroll-parallax'
 import { useEffect, useRef, useState } from 'react'
+import TypingEffect from './TypingEffect'
 
 export default function Hero({ revealed = false }){
+  const [showTyping, setShowTyping] = useState(false)
+
+  useEffect(() => {
+    // Randomly show typing effect after a delay
+    const timeout = setTimeout(() => {
+      setShowTyping(Math.random() > 0.5)
+    }, 2000)
+    return () => clearTimeout(timeout)
+  }, [])
   // Titles to show in the hero after intro overlay is dismissed
   // added extra playful roles per user request
   const titles = ['software engineer', 'UI/UX designer', 'systems designer', 'Prompt engineer','game developer', 'anime watcher', 'product designer','full stack developer', '#ETTU']
@@ -118,7 +128,17 @@ export default function Hero({ revealed = false }){
             <Parallax speed={-8}>
               <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
                 <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">Hi, I&apos;m <span className="text-[var(--accent)]">Sonpon</span> Ye-shua Chief</h1>
-                <p className="mt-3 text-base sm:text-lg md:text-xl text-[var(--text)]/90">Computer Science student -  (end-To-end Code Alchemist)</p>
+                <p className="mt-3 text-base sm:text-lg md:text-xl text-[var(--text)]/90">
+                  {showTyping ? (
+                    <TypingEffect 
+                      text="Computer Science student - (end-To-end Code Alchemist)" 
+                      speed={40}
+                      loop={true}
+                    />
+                  ) : (
+                    'Computer Science student -  (end-To-end Code Alchemist)'
+                  )}
+                </p>
                 <p className="mt-2 text-xs sm:text-sm text-[var(--text)]/70">University of Ghana • BSc Computer Science (Expected 2027) </p>
 
                 {/* typed role loop appears here after intro revealed */}
