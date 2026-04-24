@@ -3,6 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force dark background everywhere */
+* {
+  background-color: inherit;
+}
+
+html, body, #__next, main, section, div {
+  background: #0a0e27 !important;
+}
+
 :root{
   --bg: #0a0e27;
   --text: #00ff00;
@@ -12,10 +21,11 @@
 
 html,body,#__next{
   height:100%;
+  background: #0a0e27 !important;
 }
 html{font-size:16px}
 body{
-  background:var(--bg);
+  background: #0a0e27 !important;
   color:var(--text);
   font-family: 'IBM Plex Mono', monospace;
   -webkit-font-smoothing:antialiased;
