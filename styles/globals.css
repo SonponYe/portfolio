@@ -207,22 +207,24 @@ body::before{
 
 /* make the main press button a bit larger and more tappable */
 .btn-press{
-  padding:0.7rem 1.1rem;
-  font-size:0.95rem;
+  padding:0.6rem 1rem;
+  font-size:0.9rem;
   font-weight:600;
-  border-radius:9999px;
+  border-radius:6px;
+  color: #000000;
 }
 @media (min-width: 768px){
-  .btn-press{ font-size:1rem }
+  .btn-press{ font-size:0.95rem }
 }
 
 /* avatar ring and hero decorations (use existing color vars only) */
 .avatar-ring{
   display:inline-block;
   border-radius:9999px;
-  padding:6px; /* ring thickness */
-  background: radial-gradient(circle at 20% 20%, rgba(0,179,122,0.09), transparent 20%), radial-gradient(circle at 80% 80%, rgba(0,127,95,0.06), transparent 25%);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06), 0 0 40px rgba(0,127,95,0.04) inset;
+  padding:4px;
+  background: none;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3), inset 0 0 20px rgba(0, 255, 65, 0.1);
+  border: 1px solid rgba(0, 255, 65, 0.3);
 }
 
 /* subtle hero decorative glow behind content */
@@ -230,8 +232,8 @@ body::before{
   position:absolute;
   left:0;right:0;top:0;height:55vh;
   pointer-events:none;
-  background: radial-gradient(600px 300px at 10% 10%, rgba(0,127,95,0.04), transparent 10%), radial-gradient(500px 250px at 90% 20%, rgba(0,179,122,0.035), transparent 12%);
-  mix-blend-mode: multiply;
+  background: radial-gradient(600px 300px at 10% 10%, rgba(0,255,65,0.05), transparent 15%), radial-gradient(500px 250px at 90% 20%, rgba(0,255,65,0.03), transparent 18%);
+  mix-blend-mode: screen;
 }
 @media (max-width: 767px){
   .hero-decor{
@@ -241,26 +243,25 @@ body::before{
 
 /* Semi-transparent hero panel so hero content sits on a translucent background */
 .hero-bg{
-  background-color: rgba(255,255,255,0.9); /* 0.9 opacity as requested */
+  background-color: transparent !important;
 }
 
 /* animated decorative border used for hero and card outlines */
 .animated-border{
   position:relative;
   border-radius:0.75rem;
-  /* create a thin animated halo using a pseudo element */
   z-index:0;
 }
 .animated-border::before{
   content:"";
   position:absolute;
-  inset:-3px;
+  inset:-2px;
   z-index:-1;
-  border-radius:calc(0.75rem + 3px);
-  background:linear-gradient(90deg, rgba(0,179,122,0.25), rgba(0,127,95,0.25), rgba(0,179,122,0.25));
+  border-radius:calc(0.75rem + 2px);
+  background:linear-gradient(90deg, rgba(0,255,65,0.3), rgba(0,200,50,0.2), rgba(0,255,65,0.3));
   background-size:200% 200%;
-  filter:blur(8px);
-  opacity:0.9;
+  filter:blur(6px);
+  opacity:0.6;
   animation: animatedGradient 4s linear infinite;
 }
 
@@ -282,23 +283,22 @@ body::before{
   display:inline-block;
   padding:0.25rem 0;
   color:inherit;
-  transition: color 180ms ease, transform 160ms ease;
+  transition: color 150ms ease;
   -webkit-tap-highlight-color: transparent;
 }
 .nav-link::after{
   content: '';
   position: absolute;
   left: 0;
-  bottom: -6px;
-  height: 2px;
+  bottom: -4px;
+  height: 1px;
   width: 0%;
-  background: linear-gradient(90deg, var(--accent), rgba(0,127,95,0.9));
-  transition: width 220ms cubic-bezier(.2,.9,.2,1);
-  border-radius: 2px;
+  background: var(--accent);
+  transition: width 200ms ease;
+  border-radius: 1px;
 }
 .nav-link:hover, .nav-link:focus{
   color: var(--accent);
-  transform: translateY(-3px);
   outline: none;
 }
 .nav-link:hover::after, .nav-link:focus::after{
@@ -307,11 +307,10 @@ body::before{
 
 /* Brand hover subtle lift */
 .nav-brand{
-  transition: transform 180ms ease, color 180ms ease;
+  transition: color 150ms ease;
   will-change: transform;
 }
 .nav-brand:hover{
-  transform: translateY(-3px) scale(1.02);
   color: var(--accent);
 }
 
@@ -323,13 +322,15 @@ body::before{
 
 /* Project card visuals: light green border and spacing; image at top */
 .project-card{
-  border: 1px solid rgba(0,179,122,0.08);
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 160ms ease;
+  border: 1px solid rgba(0,255,65,0.2);
+  background: rgba(0, 0, 0, 0.6) !important;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  backdrop-filter: blur(4px);
 }
 .project-card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-  border-color: rgba(0,179,122,0.16);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 255, 65, 0.15);
+  border-color: rgba(0,255,65,0.35);
 }
 .project-card img{ display:block }
 

@@ -9,25 +9,25 @@ export default function ProjectCard({ project, index }){
   return (
     <CardContainer
       {...linkProps}
-      whileHover={{ y:-6 }}
-      className="block project-card p-3 sm:p-4 rounded-lg border bg-white shadow-sm"
+      whileHover={{ y:-4 }}
+      className="block project-card p-4 sm:p-5 rounded-lg border bg-black/40 shadow-lg"
     >
       {/* image area */}
       {project.icon ? (
-        <div className="w-full h-36 sm:h-40 md:h-48 rounded-md overflow-hidden bg-[var(--accent)]/6 flex items-center justify-center">
-          <img src={project.icon} alt={`${project.title} icon`} className="w-16 h-16 sm:w-20 sm:h-20 object-contain" />
+        <div className="w-full h-32 sm:h-36 md:h-44 rounded-md overflow-hidden bg-[var(--accent)]/8 flex items-center justify-center">
+          <img src={project.icon} alt={`${project.title} icon`} className="w-14 h-14 sm:w-16 sm:h-16 object-contain" />
         </div>
       ) : project.image ? (
-        <div className="w-full h-36 sm:h-40 md:h-48 rounded-md overflow-hidden bg-[var(--accent)]/6">
+        <div className="w-full h-32 sm:h-36 md:h-44 rounded-md overflow-hidden bg-[var(--accent)]/8">
           <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
         </div>
       ) : null}
-      <div className="mt-3 sm:mt-4 p-1 sm:p-2">
+      <div className="mt-3 sm:mt-4">
         <h3 className="font-semibold text-base sm:text-lg text-[var(--text)] leading-snug">{project.title}</h3>
-        <p className="mt-2 text-xs sm:text-sm text-[var(--text)]/80 leading-relaxed">{project.desc}</p>
+        <p className="mt-2 text-xs sm:text-sm text-[var(--text)]/70 leading-relaxed">{project.desc}</p>
         <div className="mt-3 sm:mt-4 flex flex-wrap gap-2">
           {project.tech.map(techItem => (
-            <span key={techItem} className="text-xs px-2 py-1 bg-[var(--text)]/6 text-[var(--text)] rounded">{techItem}</span>
+            <span key={techItem} className="text-xs px-2 py-1 bg-[var(--text)]/10 text-[var(--text)] rounded-sm border border-[var(--accent)]/20">{techItem}</span>
           
           ))}
         </div>
