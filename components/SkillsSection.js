@@ -7,19 +7,18 @@ export default function SkillsSection(){
   return (
     <SectionWrapper id="skills">
       <h2 className="section-title text-xl sm:text-2xl">Skills</h2>
-      <div className="skills-belt-wrap mt-5 sm:mt-6 py-3 sm:py-4" aria-label="Skills conveyor belt">
-        <div className="skills-belt-track">
-          <div className="skills-belt-segment">
-            {skills.map(skill => (
-              <SkillBadge key={`a-${skill}`} name={skill} />
-            ))}
-          </div>
-          <div className="skills-belt-segment" aria-hidden="true">
-            {skills.map(skill => (
-              <SkillBadge key={`b-${skill}`} name={skill} />
-            ))}
-          </div>
-        </div>
+      <p className="skills-subhead mt-4">Toolchain and craft focus for product builds.</p>
+      <div className="skills-grid mt-5 sm:mt-6" aria-label="Skills list">
+        {skills.map((skill, index) => (
+          <SkillBadge key={skill} name={skill} tone={index % 3} />
+        ))}
+      </div>
+      <div className="skills-footer mt-5">
+        <span className="skills-footer-dot" aria-hidden="true" />
+        <span>Always shipping with accessibility, performance, and clean UX in mind.</span>
+      </div>
+      <div className="skills-scanline" aria-hidden="true">
+        <div className="skills-scanline-run" />
       </div>
     </SectionWrapper>
   )

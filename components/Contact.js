@@ -183,42 +183,54 @@ export default function Contact(){
 
   return (
     <SectionWrapper id="contact">
-      <div className="px-1">
+      <div className="px-1 reachout-shell">
         <h2 className="section-title text-xl sm:text-2xl">Reach Out</h2>
 
-        <div className="json-card mt-5">
-          <div className="json-card-head">business-card.json</div>
+        <div className="reachout-grid mt-6">
+          <article className="reachout-profile-card">
+            <div className="reachout-photo-wrap">
+              <img src="/picture.png" alt="Sonpon profile" className="reachout-photo" />
+            </div>
+            <p className="reachout-role">{businessCard.role}</p>
+            <h3 className="reachout-name">{businessCard.name}</h3>
+            <p className="reachout-tag">{businessCard.tag}</p>
 
-          <div className="json-card-body">
-            <div className="json-photo-wrap">
-              <img src="/picture.png" alt="Sonpon profile" className="json-photo" />
+            <div className="reachout-primary-links">
+              <a href={`mailto:${businessCard.email}`} className="json-inline-link">Email</a>
+              <a href={`tel:${businessCard.phone}`} className="json-inline-link">Call</a>
+              <a href={businessCard.linkedin} target="_blank" rel="noreferrer" className="json-inline-link">LinkedIn</a>
+              <a href={businessCard.github} target="_blank" rel="noreferrer" className="json-inline-link">GitHub</a>
+            </div>
+          </article>
+
+          <article className="json-card">
+            <div className="json-card-head">business-card.json</div>
+
+            <div className="json-card-body">
+              <div className="json-object" role="presentation">
+                <div className="json-line">{'{'}</div>
+                {lines.map(([key, value], index) => (
+                  <div className="json-line" key={key}>
+                    <span className="json-key">  "{key}"</span>
+                    <span className="json-punc">: </span>
+                    <span className="json-value">"{value}"</span>
+                    <span className="json-punc">{index < lines.length - 1 ? ',' : ''}</span>
+                  </div>
+                ))}
+                <div className="json-line">{'}'}</div>
+              </div>
             </div>
 
-            <div className="json-object" role="presentation">
-              <div className="json-line">{'{'}</div>
-              {lines.map(([key, value], index) => (
-                <div className="json-line" key={key}>
-                  <span className="json-key">  "{key}"</span>
-                  <span className="json-punc">: </span>
-                  <span className="json-value">"{value}"</span>
-                  <span className="json-punc">{index < lines.length - 1 ? ',' : ''}</span>
-                </div>
-              ))}
-              <div className="json-line">{'}'}</div>
+            <div className="json-card-actions">
+              <a href="/sonpon-business-card.json" download className="json-download-btn">
+                Download JSON card
+              </a>
+              <button type="button" onClick={handleDownloadPng} className="json-inline-link">
+                Download PNG card
+              </button>
+              <a href={businessCard.figma} target="_blank" rel="noreferrer" className="json-inline-link">Figma</a>
             </div>
-          </div>
-
-          <div className="json-card-actions">
-            <a href="/sonpon-business-card.json" download className="json-download-btn">
-              Download JSON card
-            </a>
-            <button type="button" onClick={handleDownloadPng} className="json-inline-link">
-              Download PNG card
-            </button>
-            <a href="mailto:sonponyeshua@gmail.com" className="json-inline-link">Email</a>
-            <a href="tel:+233537460511" className="json-inline-link">Call</a>
-            <a href="https://www.linkedin.com/in/ye-shua-sonpon" target="_blank" rel="noreferrer" className="json-inline-link">LinkedIn</a>
-          </div>
+          </article>
         </div>
       </div>
     </SectionWrapper>
