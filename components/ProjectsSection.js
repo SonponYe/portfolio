@@ -20,12 +20,12 @@ export default function ProjectsSection(){
     <SectionWrapper id="projects">
       <div className="flex flex-wrap items-center gap-3 sm:gap-4">
         <h2 className="section-title text-xl sm:text-2xl">Projects</h2>
-        <span className="inline-flex items-center rounded-full px-3 py-1 text-xs sm:text-sm bg-[var(--text)]/8 text-[var(--text)]">
+        <span className="inline-flex items-center rounded-sm px-3 py-1 text-xs sm:text-sm bg-[var(--text)]/10 border border-[var(--accent)]/20 text-[var(--text)]">
           {totalProjects} total
         </span>
         <Link
           href="/projects"
-          className="inline-flex items-center rounded-full px-3 py-1 text-xs sm:text-sm border border-[var(--accent)]/30 text-[var(--text)] hover:bg-[var(--accent)]/8 transition"
+          className="inline-flex items-center rounded-sm px-3 py-1 text-xs sm:text-sm border border-[var(--accent)]/30 text-[var(--text)] hover:bg-[var(--accent)]/10 transition"
         >
           Open full projects page
         </Link>
@@ -33,7 +33,7 @@ export default function ProjectsSection(){
 
       <div className="mt-6 sm:mt-8 space-y-8 sm:space-y-10">
         {projectGroups.map(group => (
-          <section key={group.name} className="rounded-xl border border-[var(--text)]/10 p-4 sm:p-5 lg:p-6 bg-white/80">
+          <section key={group.name} className="rounded-md border border-[var(--text)]/20 p-4 sm:p-5 lg:p-6 bg-black/60">
             <button
               type="button"
               onClick={() => toggleGroup(group.name)}
@@ -46,12 +46,12 @@ export default function ProjectsSection(){
               </div>
 
               <div className="flex items-center gap-2 sm:gap-3">
-                <span className="inline-flex items-center rounded-full px-2.5 py-1 text-xs bg-[var(--accent)]/12 text-[var(--text)]">
+                <span className="inline-flex items-center rounded-sm px-2.5 py-1 text-xs bg-[var(--accent)]/12 border border-[var(--accent)]/30 text-[var(--text)]">
                   {group.projects.length} project{group.projects.length > 1 ? 's' : ''}
                 </span>
                 <motion.span
                   aria-hidden="true"
-                  className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[var(--text)]/8 text-[var(--text)] text-sm"
+                  className="inline-flex h-7 w-7 items-center justify-center rounded-sm bg-[var(--text)]/12 border border-[var(--accent)]/25 text-[var(--text)] text-sm"
                   animate={{ rotate: openGroups.includes(group.name) ? 180 : 0 }}
                   transition={{ duration: 0.25 }}
                 >
