@@ -139,7 +139,7 @@ export default function Hero({ revealed = false }){
                     'Computer Science student -  (end-To-end Code Alchemist)'
                   )}
                 </p>
-                <p className="mt-2 text-xs sm:text-sm text-[var(--text)]/70">University of Ghana • BSc Computer Science (Expected 2027) </p>
+                <p className="mt-2 text-xs sm:text-sm text-[var(--text)]/70">University of Ghana • BSc Computer Science "Expected 2027" </p>
 
                 {/* typed role loop appears here after intro revealed */}
                 <div className="mt-4 text-base sm:text-lg text-[var(--text)]/85 h-7">
