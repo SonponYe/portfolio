@@ -147,7 +147,11 @@ export const projectGroups = [
             'Built using Wix for quick deployment and easy client updates.'
           ],
           value:
-            'Helped the business present itself professionally online and improve discoverability for potential clients.'
+
+          
+            'Helped the business present itself professionally online and improve discoverability for potential clients.',
+
+
         }
       }
     ]
