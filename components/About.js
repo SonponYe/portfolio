@@ -4,10 +4,12 @@ import TypingEffect from './TypingEffect'
 
 export default function About(){
   const [showTyping, setShowTyping] = useState(false)
+  const [showTechTyping, setShowTechTyping] = useState(false)
 
   useEffect(() => {
     // Randomly show typing effect on about section
     setShowTyping(Math.random() > 0.4)
+    setShowTechTyping(Math.random() > 0.5)
   }, [])
 
   return (
@@ -32,7 +34,7 @@ export default function About(){
 
           <h3 className="mt-4 font-semibold text-sm sm:text-base">Technical Skills</h3>
           <p className="text-sm sm:text-base text-[var(--text)]/80">
-            {Math.random() > 0.5 ? (
+            {showTechTyping ? (
               <TypingEffect 
                 text="Python • C++ • JavaScript • React • React Native • Supabase • MySQL • LLM APIs • ElevenLabs • Figma • Git" 
                 speed={25}
