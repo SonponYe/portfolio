@@ -44,7 +44,7 @@ export default function BlogPostPage({ post }) {
   return (
     <>
       <Head>
-        <title>{post.title} | Blog | Ye</title>
+        <title>{`${post.title} | Blog | Ye`}</title>
         <meta name="description" content={post.excerpt} />
       </Head>
 

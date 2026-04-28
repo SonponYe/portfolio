@@ -59,7 +59,7 @@ export default function ProjectDetailPage({ project }) {
   return (
     <>
       <Head>
-        <title>{project.title} | Projects | Ye</title>
+        <title>{`${project.title} | Projects | Ye`}</title>
         <meta name="description" content={project.desc} />
       </Head>
 
