@@ -13,7 +13,7 @@ export default function Home(){
   const [showIntro, setShowIntro] = useState(false)
   const [introChecked, setIntroChecked] = useState(false)
   const [majorGlitchActive, setMajorGlitchActive] = useState(false)
-  const glitchScheduledRef = useRef(false)
+  const glitchTimerRef = useRef(null)
 
   useEffect(() => {
     const introAlreadyPlayed = window.sessionStorage.getItem('introPlayed') === '1'
@@ -35,30 +35,29 @@ export default function Home(){
   }
 
   useEffect(() => {
-    if (!introChecked || !revealed || glitchScheduledRef.current) {
+    if (!introChecked || !revealed) {
       return
     }
 
-    glitchScheduledRef.current = true
-
     const durationMs = 480
-    const firstDelay = 2600 + Math.floor(Math.random() * 2700)
-    const secondDelay = firstDelay + 1800 + Math.floor(Math.random() * 2500)
-    const safeSecondDelay = Math.min(secondDelay, 9800)
 
-    const runGlitch = () => {
-      setMajorGlitchActive(true)
-      window.setTimeout(() => {
-        setMajorGlitchActive(false)
-      }, durationMs)
+    const scheduleNextGlitch = () => {
+      const nextInterval = 25000 + Math.floor(Math.random() * 10000)
+      glitchTimerRef.current = window.setTimeout(() => {
+        setMajorGlitchActive(true)
+        window.setTimeout(() => {
+          setMajorGlitchActive(false)
+        }, durationMs)
+        scheduleNextGlitch()
+      }, nextInterval)
     }
 
-    const t1 = window.setTimeout(runGlitch, firstDelay)
-    const t2 = window.setTimeout(runGlitch, safeSecondDelay)
+    scheduleNextGlitch()
 
     return () => {
-      window.clearTimeout(t1)
-      window.clearTimeout(t2)
+      if (glitchTimerRef.current) {
+        window.clearTimeout(glitchTimerRef.current)
+      }
     }
   }, [introChecked, revealed])
 
