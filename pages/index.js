@@ -39,10 +39,10 @@ export default function Home(){
       return
     }
 
-    const durationMs = 480
+    const durationMs = 1500
 
     const scheduleNextGlitch = () => {
-      const nextInterval = 25000 + Math.floor(Math.random() * 10000)
+      const nextInterval = 10000 + Math.floor(Math.random() * 5000)
       glitchTimerRef.current = window.setTimeout(() => {
         setMajorGlitchActive(true)
         window.setTimeout(() => {
