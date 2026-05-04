@@ -114,7 +114,7 @@ export const projectGroups = [
         slug: 'capital-business-group',
         title: 'Capital Business Group',
         desc: 'Website for a London-based auto mechanic firm.',
-        link: 'https://capital-business-group.vercel.app/',
+        link: 'https://www.capital-businessgroup.com/',
         tech: ['Web Development', 'Automotive'],
         icon: '/icons/web.svg',
         details: {
