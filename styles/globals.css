@@ -255,11 +255,37 @@ body::after {
 }
 
 .avatar-ring {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 9999px;
-  padding: 4px;
-  border: 1px solid rgba(0, 255, 65, 0.35);
-  box-shadow: 0 0 18px rgba(0, 255, 65, 0.28);
+  padding: 6px;
+  border: 2px solid rgba(0, 255, 65, 0.4);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3), inset 0 0 20px rgba(0, 255, 65, 0.1);
+  overflow: hidden;
+  width: fit-content;
+}
+
+.avatar-image {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .avatar-image {
+    width: 9rem;
+    height: 9rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .avatar-image {
+    width: 12rem;
+    height: 12rem;
+  }
 }
 
 .animated-border {

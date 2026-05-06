@@ -116,11 +116,11 @@ export default function Hero({ revealed = false }){
   return (
     <section className="section min-h-[72vh] md:min-h-[75vh] flex items-center relative overflow-hidden animated-border hero-bg">
       <div className="hero-decor" aria-hidden="true" />
-      <div className="container-wide">
+      <div className="container-wide relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-20">
           <div className="flex-shrink-0">
             <div className="avatar-ring">
-              <img src="/picture.png" alt="profile" className="w-32 h-32 sm:w-36 sm:h-36 md:w-48 md:h-48 rounded-full object-cover" />
+              <img src="/picture.png" alt="profile" className="avatar-image" />
             </div>
           </div>
 
