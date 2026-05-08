@@ -163,15 +163,15 @@ export const projectGroups = [
       {
         slug: 'ugph-website-ui',
         title: 'UGPH Website UI',
-        desc: 'Public health website interface concept translated from Figma into a responsive Next.js implementation.',
+        desc: 'University of Ghana Parliament House website interface concept translated from Figma into a responsive Next.js implementation.',
         link: 'https://www.figma.com/design/3aBshbSOxiRR46xb3kZnNy/UGPH-website?node-id=0-1&p=f&t=5ZhDJvUlOL7mURGf-0',
         tech: ['Figma', 'UI/UX', 'Next.js'],
         icon: '/icons/figma.svg',
         details: {
           whatItIs:
-            'A modern web UI concept for the University of Ghana Public Health initiative, designed to communicate mission, impact, and ways to contribute.',
+            'A modern web UI concept for the University of Ghana Parliament House, designed to communicate leadership vision, parliamentary updates, and student engagement opportunities.',
           highlights: [
-            'Built as a responsive multipurpose layout with mission, programs, impact, and volunteer CTA sections.',
+            'Built as a responsive multipurpose layout with mission, parliamentary updates, and student engagement sections.',
             'Created a distinct visual language with non-default typography and atmospheric gradients.',
             'Focused on clear hierarchy so users can quickly move from understanding to action.',
             'Implemented as a live route in this portfolio for practical showcase and handoff readiness.'
