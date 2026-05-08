@@ -20,8 +20,6 @@ export default function Navbar(){
 
           <Link href="/projects" className="nav-link" aria-current={isProjectsRoute ? 'page' : undefined}>Projects</Link>
 
-          <Link href="/ugph" className="nav-link">UGPH UI</Link>
-
           <Link href="/blog" className="nav-link" aria-current={isBlogRoute ? 'page' : undefined}>Blog</Link>
 
           <Link href="/#skills" className="nav-link">Skills</Link>
