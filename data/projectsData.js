@@ -161,6 +161,26 @@ export const projectGroups = [
     summary: 'UI and product design explorations.',
     projects: [
       {
+        slug: 'ugph-website-ui',
+        title: 'UGPH Website UI',
+        desc: 'Public health website interface concept translated from Figma into a responsive Next.js implementation.',
+        link: 'https://www.figma.com/design/3aBshbSOxiRR46xb3kZnNy/UGPH-website?node-id=0-1&p=f&t=5ZhDJvUlOL7mURGf-0',
+        tech: ['Figma', 'UI/UX', 'Next.js'],
+        icon: '/icons/figma.svg',
+        details: {
+          whatItIs:
+            'A modern web UI concept for the University of Ghana Public Health initiative, designed to communicate mission, impact, and ways to contribute.',
+          highlights: [
+            'Built as a responsive multipurpose layout with mission, programs, impact, and volunteer CTA sections.',
+            'Created a distinct visual language with non-default typography and atmospheric gradients.',
+            'Focused on clear hierarchy so users can quickly move from understanding to action.',
+            'Implemented as a live route in this portfolio for practical showcase and handoff readiness.'
+          ],
+          value:
+            'Demonstrates versatility from design interpretation to front-end implementation while keeping accessibility and responsiveness in scope.'
+        }
+      },
+      {
         slug: 'figma-design-restaurant-app',
         title: 'Figma Design - Restaurant App',
         desc: 'High-fidelity UI design created in Figma showcasing modern, user-centred screens.',
