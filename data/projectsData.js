@@ -161,6 +161,26 @@ export const projectGroups = [
     summary: 'UI and product design explorations.',
     projects: [
       {
+        slug: 'rui-product-card-design',
+        title: 'RUI Product Card Design',
+        desc: 'Glassmorphic product card concept for Rui featuring a GHC 250.00 price tag, layered depth, and a centered merchandise showcase.',
+        link: 'https://www.figma.com/design/zbjNo6sksqO3IQ1u6EThCR/RUI-product-card-design?node-id=0-1&p=f&t=H3r8VOWbK8wmnxYX-0',
+        tech: ['Figma', 'UI/UX', 'Glassmorphism'],
+        icon: '/icons/figma.svg',
+        details: {
+          whatItIs:
+            'A glassmorphic product card layout for Rui that presents a black Ghana Doodle t-shirt inside a rounded translucent frame with a bold price header.',
+          highlights: [
+            'Uses soft blur, layered shadows, and rounded corners to create a premium glassmorphism effect.',
+            'Centers the product photo inside the card to keep attention on the merchandise.',
+            'Highlights the GHC 250.00 price as the primary conversion signal.',
+            'Includes supporting copy for the Ghana Doodle apparel identity and visual brand feel.'
+          ],
+          value:
+            'Shows product-card UI thinking with emphasis on hierarchy, depth, and a polished retail presentation.'
+        }
+      },
+      {
         slug: 'ugph-website-ui',
         title: 'UGPH Website UI',
         desc: 'University of Ghana Parliament House website interface concept translated from Figma into a responsive Next.js implementation.',
