@@ -1,26 +1,13 @@
 import { motion } from 'framer-motion'
 import { Parallax } from 'react-scroll-parallax'
 import { useEffect, useRef, useState } from 'react'
-import TypingEffect from './TypingEffect'
 
 export default function Hero({ revealed = false }){
-  const [showTyping, setShowTyping] = useState(false)
-
-  useEffect(() => {
-    // Randomly show typing effect after a delay
-    const timeout = setTimeout(() => {
-      setShowTyping(Math.random() > 0.5)
-    }, 2000)
-    return () => clearTimeout(timeout)
-  }, [])
-  // Titles to show in the hero after intro overlay is dismissed
-  // added extra playful roles per user request
   const titles = ['software engineer', 'UI/UX designer', 'systems designer', 'Prompt engineer','game developer', 'anime watcher', 'product designer','full stack developer', '#ETTU']
-  // Append suffix applied only to the 'game developer' title
   const appendSuffix = ' .... ish'
 
   const [display, setDisplay] = useState('')
-  const [mode, setMode] = useState('idle') // idle until revealed, then typing | pause | deleting | appendTyping | appendPause | appendDeleting
+  const [mode, setMode] = useState('idle')
   const titleIndex = useRef(0)
   const charIndex = useRef(0)
   const mounted = useRef(true)
@@ -32,7 +19,6 @@ export default function Hero({ revealed = false }){
       setDisplay('')
       return
     }
-  // this here starts the loop after intro is reached, and handles the typing/deleting logic with pauses in between
     if(mode === 'idle'){
       setMode('typing')
     }
@@ -127,29 +113,48 @@ export default function Hero({ revealed = false }){
           <div className="text-center md:text-left flex-1 w-full">
             <Parallax speed={-8}>
               <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">Hi, I&apos;m <span className="text-[var(--accent)]">Sonpon</span> Ye-shua Chief</h1>
+                <span className="hero-prompt-prefix">$ whoami</span>
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+                  Hi, I&apos;m <span className="text-[var(--accent)]">Sonpon</span> Ye-shua Chief
+                </h1>
                 <p className="mt-3 text-base sm:text-lg md:text-xl text-[var(--text)]/90">
-                  {showTyping ? (
-                    <TypingEffect 
-                      text="Computer Science student - (end-To-end Code Alchemist)" 
-                      speed={40}
-                      loop={true}
-                    />
-                  ) : (
-                    'Computer Science student -  (end-To-end Code Alchemist)'
-                  )}
+                  Computer Science student — end-to-end Code Alchemist
                 </p>
-                <p className="mt-2 text-xs sm:text-sm text-[var(--text)]/70">University of Ghana • BSc Computer Science "Expected 2027" </p>
+                <p className="mt-2 text-xs sm:text-sm text-[var(--text)]/60">
+                  University of Ghana • BSc Computer Science &quot;Expected 2027&quot;
+                </p>
 
-                {/* typed role loop appears here after intro revealed */}
-                <div className="mt-4 text-base sm:text-lg text-[var(--text)]/85 h-7">
+                <div className="mt-4 text-base sm:text-lg text-[var(--text)]/85 h-7 hero-role-line">
+                  <span className="hero-role-prefix">role:&gt;</span>
                   <span className="font-medium">{display}</span>
-                  <span className="ml-1">{revealed && <span className="animate-pulse">|</span>}</span>
+                  <span className="ml-0.5">{revealed && <span className="animate-pulse">|</span>}</span>
                 </div>
 
                 <div className="mt-6 flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-3 sm:gap-4">
-                  <a href="#projects" className="btn-press text-white inline-flex items-center gap-2">View Projects</a>
-                  <a href="#about" className="inline-flex items-center gap-2 border border-[var(--text)] text-[var(--text)] px-4 py-2 rounded-full hover:scale-105 transition-transform">About Me</a>
+                  <a href="#projects" className="btn-press text-white inline-flex items-center gap-2">
+                    View Projects
+                  </a>
+                  <a
+                    href="#about"
+                    className="inline-flex items-center gap-2 border border-[var(--text)]/60 text-[var(--text)] px-4 py-2 rounded-sm hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors duration-150"
+                  >
+                    About Me
+                  </a>
+                </div>
+
+                <div className="mt-5 flex flex-wrap items-center justify-center md:justify-start gap-2">
+                  <span className="status-badge">
+                    <span className="status-dot" aria-hidden="true" />
+                    open to internships
+                  </span>
+                  <span className="status-badge">
+                    <span className="status-dot" aria-hidden="true" />
+                    Ghana
+                  </span>
+                  <span className="status-badge">
+                    <span className="status-dot" aria-hidden="true" />
+                    #ETTU
+                  </span>
                 </div>
               </motion.div>
             </Parallax>

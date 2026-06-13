@@ -33,11 +33,11 @@ export default function HackerBackdrop() {
 
   const columns = useMemo(
     () =>
-      Array.from({ length: 22 }, (_, i) => ({
+      Array.from({ length: 32 }, (_, i) => ({
         id: i,
-        left: `${(i * 100) / 22}%`,
-        duration: `${9 + (i % 6) * 1.7}s`,
-        delay: `${-(i % 8) * 1.15}s`,
+        left: `${(i * 100) / 32}%`,
+        duration: `${8 + (i % 7) * 1.6}s`,
+        delay: `${-(i % 10) * 1.05}s`,
         text: buildColumnText(i + 11)
       })),
     []

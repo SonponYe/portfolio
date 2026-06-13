@@ -64,7 +64,8 @@ body::after {
   position: relative;
   isolation: isolate;
   min-height: 100vh;
-  background: #000;
+  background: var(--bg);
+  transition: background 220ms ease, color 220ms ease;
 }
 
 .hacker-shell::before {
@@ -95,7 +96,7 @@ body::after {
   z-index: 1;
   pointer-events: none;
   overflow: hidden;
-  opacity: 0.14;
+  opacity: 0.18;
 }
 
 .hacker-column {
@@ -342,8 +343,9 @@ body::after {
 }
 
 .project-card:hover {
-  border-color: rgba(0, 255, 65, 0.45);
-  transform: translateY(-2px);
+  border-color: rgba(0, 255, 65, 0.52);
+  transform: translateY(-3px);
+  box-shadow: 0 0 22px rgba(0, 255, 65, 0.14), 0 8px 28px rgba(0, 0, 0, 0.5);
 }
 
 .skills-subhead {
@@ -760,4 +762,419 @@ body::after {
   100% {
     transform: translate3d(0, 0, 0);
   }
+}
+
+/* ── sticky nav ── */
+.nav-scrolled {
+  background: rgba(0, 3, 0, 0.94) !important;
+  border-bottom: 1px solid rgba(0, 255, 65, 0.2);
+  box-shadow: 0 2px 28px rgba(0, 255, 65, 0.09);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-link.is-active {
+  color: var(--accent);
+}
+
+.nav-link.is-active::before,
+.nav-link.is-active::after {
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* ── terminal window ── */
+.terminal-window {
+  border: 1px solid rgba(0, 255, 65, 0.24);
+  border-radius: 8px;
+  background: rgba(0, 6, 0, 0.84);
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(0, 255, 65, 0.06), 0 8px 36px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 1rem;
+  background: rgba(0, 255, 65, 0.07);
+  border-bottom: 1px solid rgba(0, 255, 65, 0.16);
+  font-size: 0.78rem;
+  color: rgba(0, 255, 65, 0.6);
+  letter-spacing: 0.04em;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.terminal-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.td-red { background: rgba(255, 95, 87, 0.65); }
+.td-yellow { background: rgba(255, 189, 46, 0.65); }
+.td-green { background: rgba(40, 201, 65, 0.65); }
+
+.terminal-body {
+  padding: 1rem 1.2rem;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.term-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-bottom: 0.1rem;
+}
+
+.term-prompt {
+  color: var(--accent);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.term-cmd {
+  color: #b4ffc8;
+}
+
+.term-output {
+  color: var(--muted);
+  padding-left: 1.25rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.75;
+  font-size: 0.84rem;
+}
+
+.term-comment {
+  color: rgba(0, 255, 65, 0.38);
+}
+
+/* ── status badge ── */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.22rem 0.62rem;
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  border-radius: 3px;
+  font-size: 0.7rem;
+  color: rgba(0, 255, 65, 0.82);
+  background: rgba(0, 255, 65, 0.06);
+  letter-spacing: 0.05em;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 5px rgba(0, 255, 65, 0.7);
+  animation: blink 1.8s ease-in-out infinite;
+}
+
+/* ── hero role prefix ── */
+.hero-role-line {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+}
+
+.hero-role-prefix {
+  color: rgba(0, 255, 65, 0.52);
+  user-select: none;
+  font-size: 0.82rem;
+}
+
+.hero-prompt-prefix {
+  color: rgba(0, 255, 65, 0.55);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ── avatar ring hover ── */
+.avatar-ring:hover {
+  box-shadow: 0 0 36px rgba(0, 255, 65, 0.52), inset 0 0 22px rgba(0, 255, 65, 0.12);
+}
+
+/* ── footer terminal ── */
+.footer-terminal {
+  border-top: 1px solid rgba(0, 255, 65, 0.14);
+  background: rgba(0, 2, 0, 0.6);
+}
+
+@keyframes neonPulse {
+  0%, 100% { opacity: 0.72; }
+  50% { opacity: 1; }
+}
+
+/* ── project group containers (replaces inline bg-black/60) ── */
+.project-group {
+  border-radius: 6px;
+  border: 1px solid rgba(23, 249, 23, 0.18);
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* ════════════════════════════════════════════════════
+   LIGHT MODE  [data-theme="light"]
+   Warm stone-grey palette. All neon greens → dark greys.
+════════════════════════════════════════════════════ */
+
+/* CSS variables */
+[data-theme="light"] {
+  --bg: #e8e7e3;
+  --panel: rgba(220, 219, 215, 0.9);
+  --text: #1a1a1a;
+  --muted: rgba(26, 26, 26, 0.62);
+  --accent: #1a1a1a;
+  --line: rgba(0, 0, 0, 0.12);
+}
+
+/* base */
+[data-theme="light"] body {
+  background: #e8e7e3;
+  color: #1a1a1a;
+  text-shadow: none;
+}
+
+[data-theme="light"] body::before {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.04) 0,
+    rgba(0, 0, 0, 0.04) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  opacity: 0.6;
+}
+
+[data-theme="light"] body::after {
+  opacity: 0.05;
+  background: radial-gradient(circle at 50% 50%, transparent 50%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+[data-theme="light"] .hacker-shell::before {
+  background: linear-gradient(to bottom, rgba(232, 231, 227, 0.04), rgba(232, 231, 227, 0.1));
+}
+
+/* matrix — barely visible dark rain */
+[data-theme="light"] .hacker-matrix {
+  opacity: 0.06;
+}
+
+[data-theme="light"] .hacker-column {
+  color: rgba(30, 30, 30, 0.5);
+  text-shadow: none;
+}
+
+/* floating popups */
+[data-theme="light"] .hacker-popup {
+  background: rgba(228, 227, 223, 0.97);
+  border-color: rgba(0, 0, 0, 0.14);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .hacker-popup mark,
+[data-theme="light"] .hacker-popup-body { color: rgba(26, 26, 26, 0.72); }
+[data-theme="light"] .hacker-popup-header { border-bottom-color: rgba(0, 0, 0, 0.1); color: rgba(26, 26, 26, 0.6); }
+
+/* scrollbar */
+[data-theme="light"] ::-webkit-scrollbar-track { background: #d8d7d3; }
+[data-theme="light"] ::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.32); }
+
+/* nav */
+[data-theme="light"] .nav-link,
+[data-theme="light"] .nav-brand { color: #1a1a1a; }
+[data-theme="light"] .nav-link::before,
+[data-theme="light"] .nav-link::after { color: rgba(0, 0, 0, 0.35); }
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .nav-brand:hover { color: #000; }
+[data-theme="light"] .nav-link.is-active { color: #000; font-weight: 600; }
+[data-theme="light"] .nav-link.is-active::before,
+[data-theme="light"] .nav-link.is-active::after { color: rgba(0, 0, 0, 0.5); }
+[data-theme="light"] .nav-scrolled {
+  background: rgba(232, 231, 227, 0.97) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* hero */
+[data-theme="light"] .hero-decor { background: none; }
+[data-theme="light"] .hero-prompt-prefix,
+[data-theme="light"] .hero-role-prefix { color: rgba(26, 26, 26, 0.4); }
+[data-theme="light"] .animated-border { border-color: rgba(0, 0, 0, 0.09); }
+
+/* buttons */
+[data-theme="light"] .btn-press,
+[data-theme="light"] .btn-press-hero {
+  background: #1a1a1a;
+  color: #e8e7e3;
+  border-color: #1a1a1a;
+  text-shadow: none;
+}
+[data-theme="light"] .btn-press:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+}
+
+/* hero secondary button */
+[data-theme="light"] a[href="#about"].inline-flex {
+  border-color: rgba(0, 0, 0, 0.35) !important;
+  color: #1a1a1a !important;
+}
+[data-theme="light"] a[href="#about"].inline-flex:hover {
+  border-color: #1a1a1a !important;
+}
+
+/* status badges */
+[data-theme="light"] .status-badge {
+  border-color: rgba(0, 0, 0, 0.16);
+  color: rgba(26, 26, 26, 0.7);
+  background: rgba(0, 0, 0, 0.05);
+}
+[data-theme="light"] .status-dot { background: #555; box-shadow: none; }
+
+/* avatar */
+[data-theme="light"] .avatar-ring {
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.08), inset 0 0 18px rgba(0, 0, 0, 0.04);
+}
+[data-theme="light"] .avatar-ring:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.16), inset 0 0 18px rgba(0, 0, 0, 0.06);
+}
+
+/* section chrome */
+[data-theme="light"] .section-divider { border-top-color: rgba(0, 0, 0, 0.09); }
+[data-theme="light"] .section-title { color: #1a1a1a; }
+[data-theme="light"] .section-title::before,
+[data-theme="light"] .section-title::after { color: rgba(0, 0, 0, 0.35); }
+
+/* project group containers */
+[data-theme="light"] .project-group {
+  background: rgba(216, 215, 211, 0.6);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* project cards */
+[data-theme="light"] .project-card {
+  border-color: rgba(0, 0, 0, 0.1);
+  background: rgba(226, 225, 221, 0.9) !important;
+}
+[data-theme="light"] .project-card:hover {
+  border-color: rgba(0, 0, 0, 0.22);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1), 0 0 0 0 transparent;
+  transform: translateY(-3px);
+}
+
+/* skills */
+[data-theme="light"] .skills-subhead { color: rgba(26, 26, 26, 0.6); }
+[data-theme="light"] .skill-badge {
+  background: linear-gradient(180deg, rgba(224, 223, 219, 0.95), rgba(216, 215, 211, 0.98));
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #2a2a2a;
+}
+[data-theme="light"] .skill-badge:hover {
+  border-color: rgba(0, 0, 0, 0.22);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+[data-theme="light"] .skill-badge-dot,
+[data-theme="light"] .skill-badge.tone-1 .skill-badge-dot,
+[data-theme="light"] .skill-badge.tone-2 .skill-badge-dot { background: #666; box-shadow: none; }
+[data-theme="light"] .skills-scanline { background: rgba(0, 0, 0, 0.07); }
+[data-theme="light"] .skills-scanline-run { background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.25), transparent); }
+[data-theme="light"] .skills-footer { color: rgba(26, 26, 26, 0.55); }
+[data-theme="light"] .skills-footer-dot { background: rgba(0, 0, 0, 0.38); }
+
+/* terminal window — light terminal feel */
+[data-theme="light"] .terminal-window {
+  background: #dddcd8;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset, 0 6px 28px rgba(0, 0, 0, 0.1);
+}
+[data-theme="light"] .terminal-titlebar {
+  background: #d2d1cd;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  color: rgba(26, 26, 26, 0.5);
+}
+[data-theme="light"] .term-prompt { color: #444; }
+[data-theme="light"] .term-cmd { color: #1a1a1a; }
+[data-theme="light"] .term-output { color: rgba(26, 26, 26, 0.65); }
+[data-theme="light"] .term-comment { color: rgba(26, 26, 26, 0.28); }
+
+/* contact section */
+[data-theme="light"] .reachout-profile-card,
+[data-theme="light"] .json-card {
+  background: rgba(220, 219, 215, 0.92);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+}
+[data-theme="light"] .json-card-head {
+  background: rgba(0, 0, 0, 0.05);
+  color: #2a2a2a;
+  border-bottom-color: rgba(0, 0, 0, 0.09);
+}
+[data-theme="light"] .json-object {
+  background: rgba(208, 207, 203, 0.7);
+  border-color: rgba(0, 0, 0, 0.09);
+}
+[data-theme="light"] .json-key   { color: #2c4a2c; }
+[data-theme="light"] .json-punc  { color: rgba(26, 26, 26, 0.5); }
+[data-theme="light"] .json-value { color: #5a3e00; }
+[data-theme="light"] .json-download-btn,
+[data-theme="light"] .json-inline-link {
+  color: #2a2a2a;
+  background: rgba(206, 205, 201, 0.9);
+  border-color: rgba(0, 0, 0, 0.14);
+}
+[data-theme="light"] .json-download-btn:hover,
+[data-theme="light"] .json-inline-link:hover {
+  border-color: rgba(0, 0, 0, 0.26);
+  background: rgba(194, 193, 189, 0.95);
+}
+[data-theme="light"] .reachout-photo-wrap { border-color: rgba(0, 0, 0, 0.1); }
+[data-theme="light"] .reachout-role { color: rgba(26, 26, 26, 0.52); }
+[data-theme="light"] .reachout-name { color: #0a0a0a; }
+[data-theme="light"] .reachout-tag { color: rgba(26, 26, 26, 0.68); }
+
+/* footer */
+[data-theme="light"] .footer-terminal {
+  border-top-color: rgba(0, 0, 0, 0.09);
+  background: rgba(222, 221, 217, 0.55);
+}
+
+/* glitch in light mode */
+[data-theme="light"] .major-glitch-overlay {
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.08) 0,
+      rgba(0, 0, 0, 0.08) 2px,
+      transparent 2px,
+      transparent 6px
+    ),
+    linear-gradient(90deg, rgba(160, 20, 20, 0.06), rgba(20, 60, 160, 0.06));
+}
+
+/* catch any remaining hardcoded bg-white tailwind overrides */
+[data-theme="light"] .hacker-shell .bg-white,
+[data-theme="light"] .hacker-shell .bg-white\/80,
+[data-theme="light"] .hacker-shell .bg-white\/90 {
+  background: rgba(220, 219, 215, 0.92) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: none !important;
+}
+
+/* catch bg-black tailwind utilities used in project groups */
+[data-theme="light"] .bg-black\/60 {
+  background-color: rgba(216, 215, 211, 0.6) !important;
+}
+[data-theme="light"] .bg-black\/40 {
+  background-color: rgba(220, 219, 215, 0.5) !important;
 }

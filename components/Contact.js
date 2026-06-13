@@ -2,14 +2,16 @@ import SectionWrapper from './SectionWrapper'
 export default function Contact(){
   const businessCard = {
     name: 'Sonpon Ye-shua Chief',
-    role: 'Full stack developer',
-    tag: 'End-to-End Code alchemist',
-    phone: '+233537460511',
+    role: 'Full Stack Developer & CS Student',
+    tag: 'End-to-End Code Alchemist',
+    location: 'Accra, Ghana',
+    university: 'University of Ghana — BSc Computer Science (2027)',
+    availability: 'Open to internships · 2025',
     email: 'sonponyeshua@gmail.com',
+    phone: '+233537460511',
     github: 'https://github.com/SonponYe-shuaChief',
     linkedin: 'https://www.linkedin.com/in/ye-shua-sonpon',
     figma: 'https://www.figma.com/design/MHyWNFmcRCuaquKlXWJH1O/Untitled',
-   
   }
 
   const lines = Object.entries(businessCard)
