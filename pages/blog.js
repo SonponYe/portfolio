@@ -8,11 +8,9 @@ import { blogPosts, totalBlogPosts } from '../data/blogPosts'
 
 export default function BlogPage() {
   const [showTitleTyping, setShowTitleTyping] = useState(false)
-  const [showDescTyping, setShowDescTyping] = useState(false)
 
   useEffect(() => {
     setShowTitleTyping(Math.random() > 0.4)
-    setShowDescTyping(Math.random() > 0.4)
   }, [])
   return (
     <>
@@ -36,15 +34,7 @@ export default function BlogPage() {
                     {showTitleTyping ? <TypingEffect text="Blog Lab" speed={60} loop={false} /> : 'Blog Lab'}
                   </h1>
                   <p className="mt-2 text-sm sm:text-base text-[var(--text)]/80">
-                    {showDescTyping ? (
-                      <TypingEffect 
-                        text="The space between eureka and rambling, where I try to express the weirdness that is the combination of the of the odd experiences, thoughts, and feelings that make up my life...  or something like that."
-                        speed={15}
-                        loop={false}
-                      />
-                    ) : (
-                      'The space between eureka and rambling, where I try to express the weirdness that is the combination of the of the odd experiences, thoughts, and feelings that make up my life...  or something like that.'
-                    )}
+                    The space between eureka and rambling — odd experiences, thoughts, and feelings that make up my life... or something like that.
                   </p>
                 </div>
 

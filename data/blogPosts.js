@@ -82,7 +82,7 @@ export const blogPosts = [
     ]
   },
   {
-    slug: 'the Merrylow Gang',
+    slug: 'the-merrylow-gang',
     title: 'The Merrylow Gang',
     publishedOn: '2026-03-04',
     mood: 'Goosebumps',
@@ -97,7 +97,7 @@ export const blogPosts = [
     ]
   },
   {
-    slug: 'SOON TO COME',
+    slug: 'soon-to-come',
     title: 'SOON TO COME',
     publishedOn: '2026-03-04',
     mood: 'SOON TO COME',
